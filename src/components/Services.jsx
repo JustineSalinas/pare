@@ -73,7 +73,7 @@ export default function Services() {
         </div>
 
         {/* Category Tabs */}
-        <div className="flex gap-2 mb-12 overflow-x-auto pb-4 border-b border-[#2e2e2e] no-scrollbar">
+        <div className="flex flex-wrap gap-2.5 mb-12 pb-4 border-b border-[#2e2e2e]">
           {serviceCategories.map((cat) => (
             <button
               key={cat.id}

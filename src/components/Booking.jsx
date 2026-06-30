@@ -256,7 +256,7 @@ export default function Booking() {
               </h3>
               
               {/* Category tabs */}
-              <div className="flex gap-2 mb-6 overflow-x-auto pb-2.5 border-b border-[#2e2e2e] no-scrollbar">
+              <div className="flex flex-wrap gap-2 mb-6 pb-2.5 border-b border-[#2e2e2e]">
                 {serviceCategories.map((cat) => (
                   <button
                     key={cat.id}

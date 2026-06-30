@@ -20,7 +20,7 @@ const faqData = [
   {
     q: 'What are your rates and services?',
     keywords: ['price', 'rate', 'service', 'cost', 'menu', 'haircut', 'shave', 'beard', 'facial'],
-    a: 'Our signature rates are:\n• Basic Haircut & Style: ₱850\n• Student Rate: ₱700\n• Haircut & Beard Trim: ₱950\n• Haircut + Consultation: ₱1,500\n\nWe also offer Premium Packages and Facial Treatments. You can book them directly on our website!'
+    a: 'Our full service menu is categorized as follows:\n\n• **Haircut & Style:**\n  - Student Rate Haircut: ₱700 (30 min)\n  - Basic Haircut & Style: ₱850 (45 min)\n  - Long Haircut & Style: ₱950 (50 min)\n  - Haircut + Consultation: ₱1,500 (50 min)\n\n• **Haircut & Beard Services:**\n  - Haircut & Beard Trim: ₱950 (50 min)\n  - Haircut & Hot Towel Shave: ₱1,500 (50 min)\n\n• **PARE Premium Package:**\n  - Premium: ₱3,000 (1h 30m - Haircut, beard trim, and men\'s facial)\n\n• **Facial Treatments:**\n  - Aēsop Men\'s Facial Treatments: ₱2,500 (30 min)\n\n• **Wedding Packages:**\n  - Basic Groom Only: ₱5,500\n  - Groom & Bestman: ₱7,500\n  - Groom & Entourage: ₱15,500\n\nYou can book any of these directly on our website!'
   },
   {
     q: 'How do I book an appointment?',
@@ -64,11 +64,20 @@ export default function Chatbot() {
       const lowerInput = userInput.toLowerCase().trim()
       let matchedAnswer = null
 
-      // Match keywords
-      for (const faq of faqData) {
-        if (faq.keywords.some(keyword => lowerInput.includes(keyword))) {
-          matchedAnswer = faq.a
-          break
+      // 1. First check for exact question match (or close match)
+      const exactMatch = faqData.find(
+        (faq) => faq.q.toLowerCase() === lowerInput || lowerInput.includes(faq.q.toLowerCase())
+      )
+
+      if (exactMatch) {
+        matchedAnswer = exactMatch.a
+      } else {
+        // 2. Fallback to keyword matching
+        for (const faq of faqData) {
+          if (faq.keywords.some((keyword) => lowerInput.includes(keyword))) {
+            matchedAnswer = faq.a
+            break
+          }
         }
       }
 
@@ -181,7 +190,7 @@ export default function Chatbot() {
           </div>
 
           {/* Quick FAQ Suggestion Options */}
-          <div className="px-4 py-2 border-t border-[#2e2e2e] bg-[#111111] overflow-x-auto flex gap-2 no-scrollbar scroll-smooth">
+          <div className="px-4 py-2 border-t border-[#2e2e2e] bg-[#111111] flex flex-wrap gap-1.5 max-h-[120px] overflow-y-auto custom-scrollbar">
             {faqData.filter(faq => faq.q !== 'Hello').map((faq, idx) => (
               <button
                 key={idx}
