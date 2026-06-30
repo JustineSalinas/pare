@@ -3,6 +3,11 @@ import { MessageSquare, X, Send, User } from 'lucide-react'
 
 const faqData = [
   {
+    q: 'Hello',
+    keywords: ['hello', 'hi', 'hey', 'yo', 'good morning', 'greetings', 'assistant'],
+    a: 'Hello! I am your PARE digital assistant. How can I help you today? You can ask me about our hours, location, rates, wedding packages, or booking process.'
+  },
+  {
     q: 'What are your opening hours?',
     keywords: ['hours', 'time', 'open', 'schedule', 'sunday', 'close'],
     a: 'We are open Monday to Saturday from 9:00 AM to 7:00 PM, and on Sundays from 9:00 AM to 6:00 PM.'
@@ -176,19 +181,17 @@ export default function Chatbot() {
           </div>
 
           {/* Quick FAQ Suggestion Options */}
-          {messages.length === 1 && (
-            <div className="px-4 py-2 border-t border-[#2e2e2e] bg-[#111111] overflow-x-auto flex gap-2 no-scrollbar scroll-smooth">
-              {faqData.map((faq, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => handleFAQClick(faq)}
-                  className="shrink-0 bg-[#1a1a1a] hover:bg-[#C47840]/10 border border-[#2e2e2e] hover:border-[#C47840] text-[#ece9e3] px-3 py-1.5 text-[0.68rem] transition-colors cursor-pointer"
-                >
-                  {faq.q}
-                </button>
-              ))}
-            </div>
-          )}
+          <div className="px-4 py-2 border-t border-[#2e2e2e] bg-[#111111] overflow-x-auto flex gap-2 no-scrollbar scroll-smooth">
+            {faqData.filter(faq => faq.q !== 'Hello').map((faq, idx) => (
+              <button
+                key={idx}
+                onClick={() => handleFAQClick(faq)}
+                className="shrink-0 bg-[#1a1a1a] hover:bg-[#C47840]/10 border border-[#2e2e2e] hover:border-[#C47840] text-[#ece9e3] px-3 py-1.5 text-[0.68rem] transition-colors cursor-pointer"
+              >
+                {faq.q}
+              </button>
+            ))}
+          </div>
 
           {/* Input Form */}
           <form
