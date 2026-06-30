@@ -1,44 +1,36 @@
-﻿import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useReveal } from '../hooks/useReveal'
 
 const slides = [
   {
     src: 'https://images.fresha.com/locations/location-profile-images/1117646/5348347/981f4999-95a4-47aa-82c0-14d6469bfc14-PAREMensGroomingLifestyle-PH-WesternVisayas-IloiloCity-IloiloCityProper-Fresha.jpg?class=venue-gallery-large&f_width=1920',
-    caption: 'The Space â€” Modern barber chairs, designed for the experience.',
+    caption: 'The Space — Modern barber chairs, designed for the experience.',
   },
   {
     src: 'https://images.fresha.com/locations/location-profile-images/1117646/5348348/c36f8864-9eb6-41ac-8f45-5030b3788133-PAREMensGroomingLifestyle-PH-WesternVisayas-IloiloCity-IloiloCityProper-Fresha.jpg?class=venue-gallery-small&f_width=1920',
-    caption: 'The Culture â€” Where grooming meets lifestyle.',
+    caption: 'The Culture — Where grooming meets lifestyle.',
   },
   {
     src: 'https://images.fresha.com/locations/location-profile-images/1117646/5348349/58c2b3d2-137a-486d-b747-0a47a6017d4a-PAREMensGroomingLifestyle-PH-WesternVisayas-IloiloCity-IloiloCityProper-Fresha.jpg?class=venue-gallery-small&f_width=1920',
-    caption: 'The Alcove â€” General Luna Street, Iloilo City.',
-  },
-  {
-    src: 'https://images.fresha.com/professional-profiles/profile/3940801/eec5b6d9-4318-44ae-9254-c98c3061da14.jpeg?class=square512&dpr=1&keyId=jAiIM9eJuff1x3CF&signature=nLQ1Hml4MFxNWpuxbJ11Wznlm+0&f_width=1920',
-    caption: 'The Craft â€” Every angle tells a different story.',
-  },
-  {
-    src: 'https://images.fresha.com/professional-profiles/profile/3940801/283eb352-4ffb-409e-97a4-d4265da348c7.jpeg?class=square512&dpr=1&keyId=jAiIM9eJuff1x3CF&signature=TUpItOXhu2Otu+L4peQiKLJuk9A&f_width=1920',
-    caption: 'The Detail â€” Precision crafted for you.',
+    caption: 'The Alcove — General Luna Street, Iloilo City.',
   },
 ]
 
 const gridImages = [
   {
-    src: 'https://images.fresha.com/professional-profiles/profile/3940801/eec5b6d9-4318-44ae-9254-c98c3061da14.jpeg?class=square512&dpr=1&keyId=jAiIM9eJuff1x3CF&signature=nLQ1Hml4MFxNWpuxbJ11Wznlm+0&f_width=800',
+    src: 'https://images.fresha.com/professional-profiles/profile/3940801/eec5b6d9-4318-44ae-9254-c98c3061da14.jpeg?class=square512&dpr=2&keyId=jAiIM9eJuff1x3CF&signature=nLQ1Hml4MFxNWpuxbJ11Wznlm+0&f_width=1200',
     alt: 'Portfolio work 1',
   },
   {
-    src: 'https://images.fresha.com/professional-profiles/profile/3940801/283eb352-4ffb-409e-97a4-d4265da348c7.jpeg?class=square512&dpr=1&keyId=jAiIM9eJuff1x3CF&signature=TUpItOXhu2Otu+L4peQiKLJuk9A&f_width=800',
+    src: 'https://images.fresha.com/professional-profiles/profile/3940801/283eb352-4ffb-409e-97a4-d4265da348c7.jpeg?class=square512&dpr=2&keyId=jAiIM9eJuff1x3CF&signature=TUpItOXhu2Otu+L4peQiKLJuk9A&f_width=1200',
     alt: 'Portfolio work 2',
   },
   {
-    src: 'https://images.fresha.com/professional-profiles/profile/3940801/67e399f7-744e-4df4-96d1-f26d9bd4b835.jpeg?class=square512&dpr=1&keyId=jAiIM9eJuff1x3CF&signature=yQ193yd54XuCilvXgpTrFBriML4&f_width=800',
+    src: 'https://images.fresha.com/professional-profiles/profile/3940801/67e399f7-744e-4df4-96d1-f26d9bd4b835.jpeg?class=square512&dpr=2&keyId=jAiIM9eJuff1x3CF&signature=yQ193yd54XuCilvXgpTrFBriML4&f_width=1200',
     alt: 'Portfolio work 3',
   },
   {
-    src: 'https://images.fresha.com/professional-profiles/profile/3940801/5138a6c8-1da9-4e06-b1e8-faa9161326d5.jpeg?class=square512&dpr=1&keyId=jAiIM9eJuff1x3CF&signature=A5td77EzRoGYFUGexEEMoQ5LxnU&f_width=800',
+    src: 'https://images.fresha.com/professional-profiles/profile/3940801/5138a6c8-1da9-4e06-b1e8-faa9161326d5.jpeg?class=square512&dpr=2&keyId=jAiIM9eJuff1x3CF&signature=A5td77EzRoGYFUGexEEMoQ5LxnU&f_width=1200',
     alt: 'Portfolio work 4',
   },
 ]

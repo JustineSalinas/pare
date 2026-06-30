@@ -1,4 +1,4 @@
-﻿import { useReveal } from '../hooks/useReveal'
+import { useReveal } from '../hooks/useReveal'
 import { Calendar } from 'lucide-react'
 
 const FRESHA_URL =
@@ -29,13 +29,11 @@ export default function CtaBanner() {
           Book your appointment in under a minute.
         </p>
         <a
-          href={FRESHA_URL}
-          target="_blank"
-          rel="noreferrer"
+          href="#booking"
           className="inline-flex items-center gap-3 font-grotesk text-[0.85rem] font-semibold tracking-[0.2em] uppercase text-[#080808] bg-[#C47840] px-12 py-5 hover:bg-[#D9906A] transition-all hover:-translate-y-0.5 no-underline"
         >
           <Calendar size={15} />
-          Book on Fresha â€” Instant Confirmation
+          Book Appointment — Instant Confirmation
         </a>
       </div>
     </section>

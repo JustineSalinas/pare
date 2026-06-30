@@ -1,10 +1,10 @@
-﻿import { useReveal } from '../hooks/useReveal'
+import { useReveal } from '../hooks/useReveal'
 import { Star } from 'lucide-react'
 
 const members = [
   {
     name: 'Vin',
-    role: 'Owner Â· Head Barber Stylist',
+    role: 'Owner · Head Barber Stylist',
     img: 'https://cdn-partners-api.fresha.com/employee-avatars/processed/364770/medium/b3ca249a-e13a-46c0-a3a5-69ce9ff207bd-Photoroom_20240701_010515.jpeg',
     owner: true,
   },
@@ -78,7 +78,7 @@ export default function Team() {
             Meet the Team
           </h2>
           <p className="font-cormorant italic text-[clamp(1.1rem,2.5vw,1.4rem)] text-[#888880] max-w-xl mx-auto leading-relaxed">
-            Every barber at PARE is dedicated to their craft â€” constantly educating themselves in
+            Every barber at PARE is dedicated to their craft — constantly educating themselves in
             the newest and most innovative styles.
           </p>
         </div>

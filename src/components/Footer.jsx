@@ -1,4 +1,4 @@
-﻿import { Instagram, Facebook, Calendar } from 'lucide-react'
+import { Instagram, Facebook, Calendar } from 'lucide-react'
 
 const FRESHA_URL =
   'https://www.fresha.com/a/pare-mens-grooming-lifestyle-iloilo-city-the-alcove-general-luna-street-g943g1tc'
@@ -18,7 +18,7 @@ const navLinks = [
   { label: 'The Team', href: '#team' },
   { label: 'Reviews', href: '#reviews' },
   { label: 'Visit Us', href: '#location' },
-  { label: 'Book Now', href: FRESHA_URL, external: true },
+  { label: 'Book Now', href: '#booking', external: false },
 ]
 
 export default function Footer() {
@@ -47,9 +47,10 @@ export default function Footer() {
                 icon={<Facebook size={15} />}
               />
               <SocialBtn
-                href={FRESHA_URL}
-                label="Book on Fresha"
+                href="#booking"
+                label="Book Appointment"
                 icon={<Calendar size={15} />}
+                external={false}
               />
             </div>
           </div>
@@ -110,15 +111,15 @@ export default function Footer() {
                   nivla38@gmail.com
                 </a>
               </li>
-              <li className="pt-2 text-[#555550] text-[0.78rem]">Monâ€“Sat: 9AMâ€“7PM</li>
-              <li className="text-[#555550] text-[0.78rem]">Sunday: 9AMâ€“6PM</li>
+              <li className="pt-2 text-[#555550] text-[0.78rem]">Mon–Sat: 9AM–7PM</li>
+              <li className="text-[#555550] text-[0.78rem]">Sunday: 9AM–6PM</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-[#2e2e2e] pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <span className="text-[0.72rem] text-[#555550] tracking-[0.05em]">
-            Â© 2026 PARE Men's Grooming &amp; Lifestyle Â· Iloilo City, Philippines
+            © 2026 PARE Men's Grooming &amp; Lifestyle · Iloilo City, Philippines
           </span>
           <span className="font-cormorant italic text-[0.9rem] text-[#555550]">
             "Because true aesthetic is not to impress, but to refine with effortless finesse."
@@ -129,12 +130,12 @@ export default function Footer() {
   )
 }
 
-function SocialBtn({ href, label, icon }) {
+function SocialBtn({ href, label, icon, external = true }) {
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noreferrer"
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
       aria-label={label}
       className="w-9 h-9 border border-[#2e2e2e] flex items-center justify-center text-[#888880] hover:border-[#C47840] hover:text-[#C47840] transition-colors no-underline"
     >

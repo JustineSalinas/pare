@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu, X, Calendar } from 'lucide-react'
 
 const FRESHA_URL =
@@ -28,7 +28,7 @@ export default function Navbar() {
         className={[
           'fixed top-0 left-0 right-0 z-50 flex items-center justify-between transition-all duration-400',
           scrolled
-            ? 'bg-[#080808]/92 backdrop-blur-xl border-b border-[#2e2e2e] px-10 py-4'
+            ? 'bg-[#080808]/92 backdrop-blur-xl shadow-lg shadow-black/50 px-10 py-4'
             : 'px-10 py-6',
         ].join(' ')}
       >
@@ -53,9 +53,7 @@ export default function Navbar() {
         </ul>
 
         <a
-          href={FRESHA_URL}
-          target="_blank"
-          rel="noreferrer"
+          href="#booking"
           className="hidden md:inline-flex items-center gap-2 font-grotesk text-[0.7rem] font-semibold tracking-[0.25em] uppercase text-[#080808] bg-[#C47840] px-6 py-3 hover:bg-[#D9906A] transition-colors no-underline"
         >
           <Calendar size={13} />
@@ -85,12 +83,11 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href={FRESHA_URL}
-            target="_blank"
-            rel="noreferrer"
+            href="#booking"
+            onClick={() => setOpen(false)}
             className="font-grotesk text-2xl font-bold text-[#C47840] no-underline"
           >
-            Book Appointment â†’
+            Book Appointment →
           </a>
         </div>
       )}

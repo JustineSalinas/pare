@@ -1,4 +1,4 @@
-﻿import { useReveal } from '../hooks/useReveal'
+import { useReveal } from '../hooks/useReveal'
 import { Star, ExternalLink } from 'lucide-react'
 
 const FRESHA_URL =
@@ -6,11 +6,11 @@ const FRESHA_URL =
 
 const reviews = [
   { name: 'Julius D.', date: 'June 28, 2026', text: 'The best barber experience in Iloilo. Every visit is consistent, professional, and the results always exceed my expectations.' },
-  { name: 'Dexter John L.', date: 'June 28, 2026', text: "PARE isn't just a barber â€” it's an experience. The space, the team, the attention to detail. Worth every peso." },
+  { name: 'Dexter John L.', date: 'June 28, 2026', text: "PARE isn't just a barber — it's an experience. The space, the team, the attention to detail. Worth every peso." },
   { name: 'Ken P.', date: 'June 25, 2026', text: 'Been coming here for over a year. Never disappointed. Vin and his team genuinely care about the craft and it shows in every cut.' },
   { name: 'Ezra Jes L.', date: 'June 27, 2026', text: 'First time at PARE and I was blown away by the interior alone. Then the haircut? Absolutely incredible. Will definitely be back.' },
   { name: 'Tokyo D.', date: 'June 25, 2026', text: 'The consultation before the cut made all the difference. They listened, they understood, and they delivered exactly what I wanted.' },
-  { name: 'Vince D.', date: 'June 24, 2026', text: 'Booked through Fresha super easy â€” instant confirmation, showed up and was treated like a VIP from the moment I walked in.' },
+  { name: 'Vince D.', date: 'June 24, 2026', text: 'Booked through our website super easy — instant confirmation, showed up and was treated like a VIP from the moment I walked in.' },
 ]
 
 function ReviewCard({ review, delay }) {
@@ -62,7 +62,7 @@ export default function Reviews() {
             ))}
           </div>
           <div className="text-[0.75rem] tracking-[0.2em] text-[#555550]">
-            Based on 1,215 reviews on Fresha Â· 100% Recommended on Facebook
+            Perfect 5.0 Rating · 100% Recommended on Facebook
           </div>
         </div>
 
@@ -75,12 +75,12 @@ export default function Reviews() {
 
         <div className="text-center mt-12">
           <a
-            href={FRESHA_URL}
+            href="https://www.facebook.com/iloilofadebarber"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 font-grotesk text-[0.72rem] font-medium tracking-[0.25em] uppercase text-white px-10 py-4 border border-white/25 hover:border-[#C47840] hover:bg-[#C47840]/8 transition-all no-underline"
           >
-            Read All 1,215 Reviews
+            Read Facebook Reviews
             <ExternalLink size={12} />
           </a>
         </div>

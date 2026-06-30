@@ -1,4 +1,4 @@
-﻿import { useReveal } from '../hooks/useReveal'
+import { useReveal } from '../hooks/useReveal'
 import { Check } from 'lucide-react'
 
 const IMG_MAIN =
@@ -38,7 +38,7 @@ export default function About() {
               loading="lazy"
             />
             <div className="absolute bottom-4 left-0 bg-[#C47840] text-[#080808] px-5 py-3 font-grotesk text-[0.65rem] font-bold tracking-[0.2em] uppercase">
-              The Alcove Â· Iloilo City
+              The Alcove · Iloilo City
             </div>
           </div>
 
@@ -52,20 +52,20 @@ export default function About() {
             </h2>
             <div className="w-10 h-px bg-[#C47840] mb-6" />
             <p className="font-cormorant italic font-light text-[clamp(1.1rem,2.5vw,1.4rem)] text-[#888880] leading-relaxed mb-1">
-              "Not just a haircutâ€”it's character crafted through texture and shape. Every angle tells a different story."
+              "Not just a haircut — it's character crafted through texture and shape. Every angle tells a different story."
             </p>
             <p className="font-cormorant italic text-[0.85rem] text-[#555550] mb-6">
-              â€” Vin Paredes, Owner &amp; Head Barber
+              — Vin Paredes, Owner &amp; Head Barber
             </p>
             <p className="text-[0.95rem] leading-[1.85] text-[#888880] mb-4">
-              PARE is Iloilo City's premier barber salon â€” a multi-zoned space designed with
+              PARE is Iloilo City's premier barber salon — a multi-zoned space designed with
               client experience at its core. Born from the legacy of Iloilo Fade Barber, PARE
               evolved into an award-winning grooming destination that delivers high-end tailored
               haircuts in an environment that feels as elevated as the service itself.
             </p>
             <p className="text-[0.95rem] leading-[1.85] text-[#888880] mb-8">
               We are pioneers of modern barbering, offering an exclusive feel in an inclusive
-              space â€” for men, for women, for everyone who values the craft of looking and
+              space — for men, for women, for everyone who values the craft of looking and
               feeling their best.
             </p>
 

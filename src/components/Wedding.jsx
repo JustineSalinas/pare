@@ -1,8 +1,8 @@
-﻿import { useReveal } from '../hooks/useReveal'
+import { useReveal } from '../hooks/useReveal'
 import { Mail } from 'lucide-react'
 
-const IMG =
-  'https://cdn-partners-api.fresha.com/employee-avatars/processed/364770/medium/b3ca249a-e13a-46c0-a3a5-69ce9ff207bd-Photoroom_20240701_010515.jpeg'
+const SHOP_BG = 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1200&auto=format&fit=crop'
+const VIN_IMG = 'https://cdn-partners-api.fresha.com/employee-avatars/processed/364770/medium/b3ca249a-e13a-46c0-a3a5-69ce9ff207bd-Photoroom_20240701_010515.jpeg'
 
 const packages = [
   { name: 'Groom Package', price: 'Inquire' },
@@ -22,20 +22,45 @@ export default function Wedding() {
     >
       <div className="max-w-6xl mx-auto px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          {/* Image */}
-          <div ref={leftRef} className="reveal relative aspect-[4/5] hidden lg:block">
-            <span className="absolute top-8 -left-6 z-10 bg-[#C47840] text-[#080808] font-grotesk text-[0.6rem] font-bold tracking-[0.3em] uppercase px-3 py-6"
+          {/* Image Container with Sir Vin Overlay */}
+          <div ref={leftRef} className="reveal relative aspect-[4/5] hidden lg:block overflow-hidden border border-[#2e2e2e]">
+            {/* Background high-resolution moody barbershop shot */}
+            <img
+              src={SHOP_BG}
+              alt="Luxury modern barbershop environment"
+              className="w-full h-full object-cover filter brightness-[0.3] grayscale-[20%]"
+              loading="lazy"
+            />
+            
+            {/* Vertical text banner */}
+            <span className="absolute top-8 left-6 z-10 bg-[#C47840] text-[#080808] font-grotesk text-[0.6rem] font-bold tracking-[0.3em] uppercase px-3 py-6"
               style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
             >
               Special Occasion
             </span>
-            <img
-              src={IMG}
-              alt="Vin - PARE owner and head barber for wedding grooming"
-              className="w-full h-full object-cover object-top"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#080808]/50" />
+
+            {/* Overlaid Profile Card for Sir Vin */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center z-10">
+              <div className="w-40 h-40 rounded-full border-2 border-[#C47840] overflow-hidden mb-5 shadow-2xl bg-[#080808] flex items-center justify-center">
+                <img
+                  src={VIN_IMG}
+                  alt="Vin - PARE owner and head barber"
+                  className="w-full h-full object-cover object-top scale-110"
+                  loading="lazy"
+                />
+              </div>
+              <div className="bg-[#080808]/85 backdrop-blur-md border border-[#2e2e2e] px-6 py-4 max-w-[280px]">
+                <h4 className="font-grotesk font-bold text-[0.95rem] text-white tracking-[0.05em] mb-1">
+                  Vin Paredes
+                </h4>
+                <div className="text-[0.68rem] tracking-[0.15em] uppercase text-[#C47840] font-semibold mb-2">
+                  Owner & Head Stylist
+                </div>
+                <p className="text-[0.72rem] text-[#888880] leading-relaxed">
+                  Personally orchestrates all wedding and entourage styling sessions.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Text */}

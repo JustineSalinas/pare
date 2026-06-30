@@ -1,15 +1,15 @@
-﻿import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useReveal } from '../hooks/useReveal'
 import { MapPin, Clock, Mail, Globe } from 'lucide-react'
 
 const hours = [
-  { day: 'Monday',    time: '9:00 AM â€“ 7:00 PM' },
-  { day: 'Tuesday',   time: '9:00 AM â€“ 7:00 PM' },
-  { day: 'Wednesday', time: '9:00 AM â€“ 7:00 PM' },
-  { day: 'Thursday',  time: '9:00 AM â€“ 7:00 PM' },
-  { day: 'Friday',    time: '9:00 AM â€“ 7:00 PM' },
-  { day: 'Saturday',  time: '9:00 AM â€“ 7:00 PM' },
-  { day: 'Sunday',    time: '9:00 AM â€“ 6:00 PM' },
+  { day: 'Monday',    time: '9:00 AM – 7:00 PM' },
+  { day: 'Tuesday',   time: '9:00 AM – 7:00 PM' },
+  { day: 'Wednesday', time: '9:00 AM – 7:00 PM' },
+  { day: 'Thursday',  time: '9:00 AM – 7:00 PM' },
+  { day: 'Friday',    time: '9:00 AM – 7:00 PM' },
+  { day: 'Saturday',  time: '9:00 AM – 7:00 PM' },
+  { day: 'Sunday',    time: '9:00 AM – 6:00 PM' },
 ]
 
 const DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
@@ -34,9 +34,9 @@ export default function Location() {
         </h2>
         <div className="w-10 h-px bg-[#C47840] mb-12" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
           {/* Info + hours */}
-          <div ref={leftRef} className="reveal">
+          <div ref={leftRef} className="reveal flex flex-col justify-between">
             <div className="space-y-6 mb-10">
               <InfoRow icon={<MapPin size={16} className="text-[#C47840]" />} label="Address">
                 The Alcove Bldg, General Luna Street<br />
@@ -44,8 +44,8 @@ export default function Location() {
                 Iloilo City, Western Visayas 5000
               </InfoRow>
               <InfoRow icon={<Clock size={16} className="text-[#C47840]" />} label="Hours">
-                Mon â€“ Sat: 9:00 AM â€“ 7:00 PM<br />
-                Sunday: 9:00 AM â€“ 6:00 PM
+                Mon – Sat: 9:00 AM – 7:00 PM<br />
+                Sunday: 9:00 AM – 6:00 PM
               </InfoRow>
               <InfoRow icon={<Mail size={16} className="text-[#C47840]" />} label="Contact">
                 <a href="mailto:nivla38@gmail.com" className="text-[#C47840] no-underline hover:text-[#D9906A] transition-colors">
@@ -53,14 +53,12 @@ export default function Location() {
                 </a>
               </InfoRow>
               <InfoRow icon={<Globe size={16} className="text-[#C47840]" />} label="Book Online">
-                Instant confirmation via Fresha.<br />
+                Instant confirmation on our website.<br />
                 <a
-                  href="https://www.fresha.com/a/pare-mens-grooming-lifestyle-iloilo-city-the-alcove-general-luna-street-g943g1tc"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-[#C47840] no-underline hover:text-[#D9906A] transition-colors"
+                  href="#booking"
+                  className="text-[#C47840] no-underline hover:text-[#D9906A] transition-colors font-medium"
                 >
-                  fresha.com â†’ PARE
+                  Book Appointment Now →
                 </a>
               </InfoRow>
             </div>
@@ -77,7 +75,7 @@ export default function Location() {
                 >
                   <span className={`font-grotesk font-medium ${h.day === today ? 'text-[#C47840]' : 'text-[#888880]'}`}>
                     {h.day}
-                    {h.day === today && <span className="ml-2 text-[0.6rem] tracking-[0.15em] uppercase">Â· Today</span>}
+                    {h.day === today && <span className="ml-2 text-[0.6rem] tracking-[0.15em] uppercase">· Today</span>}
                   </span>
                   <span className={h.day === today ? 'text-[#C47840]' : 'text-[#ece9e3]'}>
                     {h.time}
@@ -88,10 +86,10 @@ export default function Location() {
           </div>
 
           {/* Map */}
-          <div ref={rightRef} className="reveal">
-            <div className="w-full aspect-[4/3] border border-[#2e2e2e] overflow-hidden">
+          <div ref={rightRef} className="reveal flex flex-col justify-between h-full">
+            <div className="w-full h-[480px] border border-[#2e2e2e] overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243!2d122.56121!3d10.69988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aee57000000001%3A0x0!2sThe%20Alcove%2C%20General%20Luna%20St%2C%20Iloilo%20City!5e0!3m2!1sen!2sph!4v1688000000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.590138245585!2d122.55902137588324!3d10.699990960855217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aee52c2865ffb3%3A0xe10ad542037996c5!2sPARE%20Men&#39;s%20Grooming%20%26%20Lifestyle!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph"
                 className="w-full h-full border-none"
                 style={{ filter: 'grayscale(80%) invert(90%) hue-rotate(180deg)' }}
                 loading="lazy"
@@ -101,12 +99,12 @@ export default function Location() {
               />
             </div>
             <a
-              href="https://maps.google.com/?q=The+Alcove+General+Luna+Street+Iloilo+City"
+              href="https://maps.google.com/?q=PARE+Men's+Grooming+and+Lifestyle+Iloilo+City"
               target="_blank"
               rel="noreferrer"
               className="block text-center mt-4 font-grotesk text-[0.7rem] tracking-[0.2em] uppercase text-[#C47840] hover:text-[#D9906A] transition-colors no-underline"
             >
-              Open in Google Maps â†’
+              Open in Google Maps →
             </a>
           </div>
         </div>
