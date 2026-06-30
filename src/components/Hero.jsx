@@ -1,4 +1,4 @@
-﻿import { ChevronDown } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 
 const FRESHA_URL =
   'https://www.fresha.com/a/pare-mens-grooming-lifestyle-iloilo-city-the-alcove-general-luna-street-g943g1tc'
@@ -34,9 +34,7 @@ export default function Hero() {
 
         <div className="flex gap-5 justify-center flex-wrap">
           <a
-            href={FRESHA_URL}
-            target="_blank"
-            rel="noreferrer"
+            href="#booking"
             className="font-grotesk text-[0.72rem] font-semibold tracking-[0.25em] uppercase text-[#080808] bg-[#C47840] px-10 py-4 hover:bg-[#D9906A] transition-all hover:-translate-y-0.5 no-underline"
           >
             Book an Appointment
