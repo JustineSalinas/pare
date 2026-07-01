@@ -16,20 +16,20 @@ const reviews = [
 function ReviewCard({ review, delay }) {
   const ref = useReveal(delay)
   return (
-    <div ref={ref} className="reveal bg-[#111111] p-8">
+    <div ref={ref} className="reveal bg-[#faf8f5] p-8">
       <div className="flex gap-0.5 mb-4">
         {[...Array(5)].map((_, i) => (
           <Star key={i} size={13} fill="#C47840" className="text-[#C47840]" />
         ))}
       </div>
-      <p className="font-cormorant italic text-[1.05rem] text-[#ece9e3] leading-relaxed mb-6">
+      <p className="font-fraunces italic text-[1.05rem] text-[#1a1a1a] leading-relaxed mb-6">
         "{review.text}"
       </p>
       <div>
-        <div className="font-grotesk font-semibold text-[0.75rem] tracking-[0.1em] text-[#888880] uppercase">
+        <div className="font-grotesk font-semibold text-[0.75rem] tracking-[0.1em] text-[#555550] uppercase">
           {review.name}
         </div>
-        <div className="text-[0.68rem] text-[#555550] mt-0.5">{review.date}</div>
+        <div className="text-[0.68rem] text-[#8a8780] mt-0.5">{review.date}</div>
       </div>
     </div>
   )
@@ -40,20 +40,20 @@ export default function Reviews() {
   const scoreRef = useReveal(80)
 
   return (
-    <section id="reviews" className="py-28 bg-[#111111]">
+    <section id="reviews" className="py-28 bg-[#faf8f5]">
       <div className="max-w-6xl mx-auto px-8">
         <div ref={headRef} className="reveal text-center mb-6">
           <p className="font-grotesk text-[0.6rem] font-semibold tracking-[0.4em] uppercase text-[#C47840] mb-4">
             What Clients Say
           </p>
-          <h2 className="font-grotesk font-bold text-[clamp(2rem,5vw,3.5rem)] text-white tracking-tight">
+          <h2 className="font-grotesk font-bold text-[clamp(2rem,5vw,3.5rem)] text-[#111111] tracking-tight">
             Reviews
           </h2>
         </div>
 
         {/* Big score */}
         <div ref={scoreRef} className="reveal text-center mb-14">
-          <div className="font-grotesk font-bold text-[5rem] text-white leading-none tracking-[-0.04em]">
+          <div className="font-grotesk font-bold text-[5rem] text-[#111111] leading-none tracking-[-0.04em]">
             5.0
           </div>
           <div className="flex justify-center gap-1 my-3">
@@ -61,13 +61,13 @@ export default function Reviews() {
               <Star key={i} size={22} fill="#C47840" className="text-[#C47840]" />
             ))}
           </div>
-          <div className="text-[0.75rem] tracking-[0.2em] text-[#555550]">
+          <div className="text-[0.75rem] tracking-[0.2em] text-[#8a8780]">
             Perfect 5.0 Rating · 100% Recommended on Facebook
           </div>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#2e2e2e]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#e4e0d8]">
           {reviews.map((r, i) => (
             <ReviewCard key={r.name} review={r} delay={i * 60} />
           ))}
@@ -78,7 +78,7 @@ export default function Reviews() {
             href="https://www.facebook.com/iloilofadebarber"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 font-grotesk text-[0.72rem] font-medium tracking-[0.25em] uppercase text-white px-10 py-4 border border-white/25 hover:border-[#C47840] hover:bg-[#C47840]/8 transition-all no-underline"
+            className="inline-flex items-center gap-2 font-general-sans text-[0.72rem] font-medium tracking-[0.25em] uppercase text-[#111111] px-10 py-4 border border-[#111111]/20 hover:border-[#C47840] hover:bg-[#C47840]/8 transition-all no-underline"
           >
             Read Facebook Reviews
             <ExternalLink size={12} />
@@ -88,4 +88,3 @@ export default function Reviews() {
     </section>
   )
 }
-

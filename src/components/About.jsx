@@ -20,7 +20,7 @@ export default function About() {
   const rightRef = useReveal(120)
 
   return (
-    <section id="about" className="py-28 bg-[#080808]">
+    <section id="about" className="py-28 bg-[#faf8f5]">
       <div className="max-w-6xl mx-auto px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-24 items-center">
           {/* Images */}
@@ -34,7 +34,7 @@ export default function About() {
             <img
               src={IMG_ACCENT}
               alt="PARE interior lifestyle decor"
-              className="absolute bottom-0 right-0 w-[55%] h-[55%] object-cover border-4 border-[#080808]"
+              className="absolute bottom-0 right-0 w-[55%] h-[55%] object-cover border-4 border-[#faf8f5]"
               loading="lazy"
             />
             <div className="absolute bottom-4 left-0 bg-[#C47840] text-[#080808] px-5 py-3 font-grotesk text-[0.65rem] font-bold tracking-[0.2em] uppercase">
@@ -47,23 +47,23 @@ export default function About() {
             <p className="font-grotesk text-[0.6rem] font-semibold tracking-[0.4em] uppercase text-[#C47840] mb-4">
               Our Story
             </p>
-            <h2 className="font-grotesk font-bold text-[clamp(2rem,5vw,3.5rem)] leading-[1.1] text-white tracking-tight mb-6">
+            <h2 className="font-grotesk font-bold text-[clamp(2rem,5vw,3.5rem)] leading-[1.1] text-[#111111] tracking-tight mb-6">
               Beyond the Cut.<br />It's Character.
             </h2>
             <div className="w-10 h-px bg-[#C47840] mb-6" />
-            <p className="font-cormorant italic font-light text-[clamp(1.1rem,2.5vw,1.4rem)] text-[#888880] leading-relaxed mb-1">
+            <p className="font-fraunces italic font-light text-[clamp(1.1rem,2.5vw,1.4rem)] text-[#4a463e] leading-relaxed mb-1">
               "Not just a haircut — it's character crafted through texture and shape. Every angle tells a different story."
             </p>
-            <p className="font-cormorant italic text-[0.85rem] text-[#555550] mb-6">
+            <p className="font-fraunces italic text-[0.85rem] text-[#4a463e] mb-6">
               — Vin Paredes, Owner &amp; Head Barber
             </p>
-            <p className="text-[0.95rem] leading-[1.85] text-[#888880] mb-4">
+            <p className="text-[0.95rem] leading-[1.85] text-[#6b675f] mb-4">
               PARE is Iloilo City's premier barber salon — a multi-zoned space designed with
               client experience at its core. Born from the legacy of Iloilo Fade Barber, PARE
               evolved into an award-winning grooming destination that delivers high-end tailored
               haircuts in an environment that feels as elevated as the service itself.
             </p>
-            <p className="text-[0.95rem] leading-[1.85] text-[#888880] mb-8">
+            <p className="text-[0.95rem] leading-[1.85] text-[#6b675f] mb-8">
               We are pioneers of modern barbering, offering an exclusive feel in an inclusive
               space — for men, for women, for everyone who values the craft of looking and
               feeling their best.
@@ -73,7 +73,7 @@ export default function About() {
               {features.map((f) => (
                 <div key={f} className="flex items-center gap-2.5">
                   <Check size={13} className="text-[#C47840] shrink-0" />
-                  <span className="font-grotesk text-[0.8rem] font-medium text-[#ece9e3]">
+                  <span className="font-grotesk text-[0.8rem] font-medium text-[#1a1a1a]">
                     {f}
                   </span>
                 </div>
@@ -85,4 +85,3 @@ export default function About() {
     </section>
   )
 }
-

@@ -210,8 +210,8 @@ export default function Booking() {
     <section id="booking" className="py-28 bg-[#080808] border-t border-[#2e2e2e]">
       <div ref={containerRef} className="reveal max-w-4xl mx-auto px-8">
         <div className="text-center mb-12">
-          <p className="font-grotesk text-[0.6rem] font-semibold tracking-[0.4em] uppercase text-[#C47840] mb-3">
-            Grooming Experience
+          <p className="font-general-sans text-[0.6rem] font-semibold tracking-[0.4em] uppercase text-[#C47840] mb-3">
+            Experience PARE
           </p>
           <h2 className="font-grotesk font-bold text-[clamp(2rem,5vw,3.5rem)] text-white tracking-tight">
             Book Appointment
@@ -251,7 +251,7 @@ export default function Booking() {
           {/* Step 1: Services */}
           {step === 1 && (
             <div>
-              <h3 className="font-grotesk text-[1.1rem] font-medium text-white mb-6 flex items-center gap-2.5">
+              <h3 className="font-general-sans text-[1.1rem] font-medium text-white mb-6 flex items-center gap-2.5">
                 <Scissors size={18} className="text-[#C47840]" /> Select Service
               </h3>
               
@@ -340,7 +340,7 @@ export default function Booking() {
                       <div className="font-grotesk font-medium text-[0.9rem] text-[#ece9e3] mb-0.5">
                         {b.name}
                       </div>
-                      <div className="text-[0.68rem] tracking-[0.05em] text-[#888880] uppercase">
+                      <div className="text-[0.68rem] font-general-sans tracking-[0.05em] text-[#888880] uppercase">
                         {b.role}
                       </div>
                     </div>
@@ -450,14 +450,14 @@ export default function Booking() {
 
                 {/* Time Selection (right side) */}
                 <div className="lg:col-span-5">
-                  <h4 className="block font-grotesk text-[0.7rem] font-semibold tracking-[0.1em] uppercase text-[#888880] mb-4">
+                  <h4 className="block font-general-sans text-[0.7rem] font-semibold tracking-[0.1em] uppercase text-[#888880] mb-4">
                     Available Time Slots 
                     {bookingDate && (
-                      <span className="font-cormorant italic text-[0.85rem] text-[#C47840] ml-2 font-normal lowercase">
+                      <span className="font-general-sans font-semibold text-[0.85rem] text-[#C47840] ml-2 font-normal lowercase">
                         for {new Date(bookingDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                       </span>
                     )}
-                  </h4>
+                  </h4> 
                   {!bookingDate ? (
                     <div className="h-48 flex items-center justify-center border border-dashed border-[#2e2e2e] text-[0.82rem] text-[#555550] bg-[#080808] p-6 text-center">
                       Please select a date from the calendar to view available time slots.
@@ -635,7 +635,7 @@ export default function Booking() {
                     (step === 3 && (!bookingDate || !bookingTime))
                   }
                   className={[
-                    'flex items-center gap-1 font-grotesk text-[0.7rem] font-semibold tracking-[0.15em] uppercase px-6 py-3 transition-colors border-none cursor-pointer',
+                    'flex items-center gap-1 font-general-sans text-[0.7rem] font-semibold tracking-[0.15em] uppercase px-6 py-3 transition-colors border-none cursor-pointer',
                     ((step === 1 && !selectedService) ||
                     (step === 2 && !selectedBarber) ||
                     (step === 3 && (!bookingDate || !bookingTime)))

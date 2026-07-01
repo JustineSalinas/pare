@@ -5,7 +5,7 @@ import { Star, Instagram, Facebook, X } from 'lucide-react'
 const members = [
   {
     name: 'Vin',
-    role: 'Owner · Head Barber Stylist',
+    role: 'Head Barber Stylist',
     img: '/vinprofile.webp',
     owner: true,
     bio: 'Founder of PARE. Specializes in precision fades and classic gentleman cuts, with over a decade of experience shaping the modern Iloilo barbering scene.',
@@ -52,7 +52,7 @@ const members = [
     role: 'Senior Barber Stylist',
     img: '/arthurprofile.webp',
     bio: 'Brings creative flair to every cut, from classic to avant-garde.',
-    instagram: 'https://instagram.com/arthur.pare',
+    instagram: 'https://www.instagram.com/arthur_pare.iloilo/?hl=en',
     facebook: '',
     work: [
       '/arthurwork1.png', 
@@ -281,7 +281,7 @@ export default function Team() {
             <h2 className="font-grotesk font-bold text-[clamp(2rem,5vw,3.5rem)] text-white tracking-tight mb-6">
               Meet the Team
             </h2>
-            <p className="font-cormorant italic text-[clamp(1.1rem,2.5vw,1.4rem)] text-[#888880] max-w-xl mx-auto leading-relaxed">
+            <p className="font-fraunces italic text-[clamp(1.1rem,2.5vw,1.4rem)] text-[#888880] max-w-xl mx-auto leading-relaxed">
               Every barber at PARE is dedicated to their craft — constantly educating themselves in
               the newest and most innovative styles.
             </p>
