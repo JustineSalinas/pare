@@ -25,12 +25,12 @@ export default function CtaBanner() {
         <h2 className="font-grotesk font-bold text-[clamp(2.5rem,6vw,5rem)] text-white leading-[1.05] tracking-tight mb-5">
           Your Best Look<br />Awaits.
         </h2>
-        <p className="font-cormorant italic text-[1.3rem] text-[#888880] mb-12">
+        <p className="font-fraunces italic text-[1.3rem] text-[#888880] mb-12">
           Book your appointment in under a minute.
         </p>
         <a
           href="#booking"
-          className="inline-flex items-center gap-3 font-grotesk text-[0.85rem] font-semibold tracking-[0.2em] uppercase text-[#080808] bg-[#C47840] px-12 py-5 hover:bg-[#D9906A] transition-all hover:-translate-y-0.5 no-underline"
+          className="inline-flex items-center gap-3 font-general-sans text-[0.85rem] font-semibold tracking-[0.2em] uppercase text-[#080808] bg-[#C47840] px-12 py-5 hover:bg-[#D9906A] transition-all hover:-translate-y-0.5 no-underline"
         >
           <Calendar size={15} />
           Book Appointment — Instant Confirmation

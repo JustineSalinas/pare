@@ -72,7 +72,7 @@ export default function Wedding() {
               Wedding<br />Packages
             </h2>
             <div className="w-10 h-px bg-[#C47840] mb-6" />
-            <p className="font-cormorant italic text-[clamp(1.1rem,2.5vw,1.4rem)] text-[#888880] leading-relaxed mb-8">
+            <p className="font-fraunces italic text-[clamp(1.1rem,2.5vw,1.4rem)] text-[#888880] leading-relaxed mb-8">
               Look your absolute best on the most important day. Our wedding packages are designed
               to prepare grooms, groomsmen, and the entire entourage with precision and care.
             </p>
@@ -95,7 +95,7 @@ export default function Wedding() {
 
             <a
               href="mailto:nivla38@gmail.com?subject=Wedding%20Package%20Inquiry%20-%20PARE"
-              className="inline-flex items-center gap-2 font-grotesk text-[0.72rem] font-semibold tracking-[0.25em] uppercase text-[#080808] bg-[#C47840] px-8 py-4 hover:bg-[#D9906A] transition-colors no-underline"
+              className="inline-flex items-center gap-2 font-general-sans text-[0.72rem] font-semibold tracking-[0.25em] uppercase text-[#080808] bg-[#C47840] px-8 py-4 hover:bg-[#D9906A] transition-colors no-underline"
             >
               <Mail size={13} />
               Inquire About Wedding Services
