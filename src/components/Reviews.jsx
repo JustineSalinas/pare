@@ -13,18 +13,19 @@ const reviews = [
   { name: 'Vince D.', date: 'June 24, 2026', text: 'Booked through our website super easy — instant confirmation, showed up and was treated like a VIP from the moment I walked in.' },
 ]
 
-function ReviewCard({ review, delay }) {
-  const ref = useReveal(delay)
+function ReviewCard({ review }) {
   return (
-    <div ref={ref} className="reveal bg-[#faf8f5] p-8">
-      <div className="flex gap-0.5 mb-4">
-        {[...Array(5)].map((_, i) => (
-          <Star key={i} size={13} fill="#C47840" className="text-[#C47840]" />
-        ))}
+    <div className="bg-[#faf8f5] border border-[#e4e0d8] p-8 w-[85vw] md:w-[400px] shrink-0 flex flex-col justify-between transition-colors hover:bg-white">
+      <div>
+        <div className="flex gap-0.5 mb-4">
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} size={13} fill="#C47840" className="text-[#C47840]" />
+          ))}
+        </div>
+        <p className="font-fraunces italic text-[1.05rem] text-[#1a1a1a] leading-relaxed mb-6">
+          "{review.text}"
+        </p>
       </div>
-      <p className="font-fraunces italic text-[1.05rem] text-[#1a1a1a] leading-relaxed mb-6">
-        "{review.text}"
-      </p>
       <div>
         <div className="font-grotesk font-semibold text-[0.75rem] tracking-[0.1em] text-[#555550] uppercase">
           {review.name}
@@ -38,12 +39,13 @@ function ReviewCard({ review, delay }) {
 export default function Reviews() {
   const headRef = useReveal(0)
   const scoreRef = useReveal(80)
+  const carouselRef = useReveal(120)
 
   return (
-    <section id="reviews" className="py-28 bg-[#faf8f5]">
-      <div className="max-w-6xl mx-auto px-8">
+    <section id="reviews" className="py-28 bg-[#faf8f5] overflow-hidden">
+      <div className="max-w-6xl mx-auto px-8 mb-14">
         <div ref={headRef} className="reveal text-center mb-6">
-          <p className="font-grotesk text-[0.6rem] font-semibold tracking-[0.4em] uppercase text-[#C47840] mb-4">
+          <p className="font-grotesk text-[0.75rem] font-bold tracking-[0.4em] uppercase text-[#C47840] mb-4">
             What Clients Say
           </p>
           <h2 className="font-grotesk font-bold text-[clamp(2rem,5vw,3.5rem)] text-[#111111] tracking-tight">
@@ -52,7 +54,7 @@ export default function Reviews() {
         </div>
 
         {/* Big score */}
-        <div ref={scoreRef} className="reveal text-center mb-14">
+        <div ref={scoreRef} className="reveal text-center">
           <div className="font-grotesk font-bold text-[5rem] text-[#111111] leading-none tracking-[-0.04em]">
             5.0
           </div>
@@ -65,14 +67,30 @@ export default function Reviews() {
             Perfect 5.0 Rating · 100% Recommended on Facebook
           </div>
         </div>
+      </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#e4e0d8]">
+      {/* Infinite Carousel */}
+      <div ref={carouselRef} className="reveal relative flex gap-6 group py-4">
+        {/* Fade edge gradients */}
+        <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-[#faf8f5] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-[#faf8f5] to-transparent z-10 pointer-events-none" />
+
+        {/* Track 1 */}
+        <div className="flex gap-6 shrink-0 animate-marquee">
           {reviews.map((r, i) => (
-            <ReviewCard key={r.name} review={r} delay={i * 60} />
+            <ReviewCard key={i} review={r} />
           ))}
         </div>
 
+        {/* Track 2 (Duplicate to create the seamless loop) */}
+        <div className="flex gap-6 shrink-0 animate-marquee" aria-hidden="true">
+          {reviews.map((r, i) => (
+            <ReviewCard key={`dup-${i}`} review={r} />
+          ))}
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-8">
         <div className="text-center mt-12">
           <a
             href="https://www.facebook.com/iloilofadebarber"
