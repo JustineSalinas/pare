@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { MessageSquare, X, Send, User } from 'lucide-react'
+import { X, Send, User } from 'lucide-react'
 
 const faqData = [
   {
@@ -110,14 +110,18 @@ export default function Chatbot() {
     <div className="fixed bottom-6 right-6 z-50 font-grotesk">
       {/* Floating Toggle Button */}
       {!isOpen && (
-        <button
-          onClick={() => setIsOpen(true)}
-          className="w-14 h-14 bg-[#C47840] hover:bg-[#D9906A] text-[#080808] rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 transform hover:scale-105 border-none cursor-pointer"
-          aria-label="Open Chat"
-        >
-          <MessageSquare size={24} />
-        </button>
-      )}
+  <button
+    onClick={() => setIsOpen(true)}
+    className="w-14 h-14 bg-[#C47840] hover:bg-[#D9906A] text-[#080808] rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 transform hover:scale-105 border-none cursor-pointer overflow-hidden"
+    aria-label="Open Chat"
+  >
+    <img 
+      src="/parechatbot.png" 
+      alt="Chatbot Icon" 
+      className="w-[130%] h-[130%] object-cover scale-100 transition-all duration-300 hover:brightness-250" 
+    />
+  </button>
+)}
 
       {/* Chat Window */}
       {isOpen && (
