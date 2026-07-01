@@ -47,6 +47,18 @@
   .font-cormorant {
     font-family: 'Cormorant Garamond', serif;
   }
+  .font-fraunces {
+    font-family: 'Fraunces', serif;
+  }
+  .font-canela {
+    font-family: 'Canela', serif;
+  }
+  .font-archivo {
+    font-family: 'Archivo', sans-serif;
+  }
+  .font-general-sans {
+    font-family: 'General Sans', sans-serif;
+  }
 }
 
 /* Animations */
