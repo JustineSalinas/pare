@@ -102,7 +102,7 @@ export default function Location() {
               href="https://maps.google.com/?q=PARE+Men's+Grooming+and+Lifestyle+Iloilo+City"
               target="_blank"
               rel="noreferrer"
-              className="block text-center mt-4 font-grotesk text-[0.7rem] tracking-[0.2em] uppercase text-[#C47840] hover:text-[#D9906A] transition-colors no-underline"
+              className="block text-center mt-4 font-general-sans font-semibold text-[0.7rem] tracking-[0.2em] uppercase text-[#C47840] hover:text-[#D9906A] transition-colors no-underline"
             >
               Open in Google Maps →
             </a>

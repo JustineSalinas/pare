@@ -121,7 +121,7 @@ export default function Footer() {
           <span className="text-[0.72rem] text-[#555550] tracking-[0.05em]">
             © 2026 PARE Men's Grooming &amp; Lifestyle · Iloilo City, Philippines
           </span>
-          <span className="font-cormorant italic text-[0.9rem] text-[#555550]">
+          <span className="font-fraunces italic text-[0.9rem] text-[#555550]">
             "Because true aesthetic is not to impress, but to refine with effortless finesse."
           </span>
         </div>
