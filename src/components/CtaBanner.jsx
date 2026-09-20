@@ -1,11 +1,11 @@
 import { useReveal } from '../hooks/useReveal'
 import { Calendar } from 'lucide-react'
+import { FALLBACK_TEXTURE } from './Img'
 
 const FRESHA_URL =
   'https://www.fresha.com/a/pare-mens-grooming-lifestyle-iloilo-city-the-alcove-general-luna-street-g943g1tc'
 
-const BG =
-  'https://images.fresha.com/locations/location-profile-images/1117646/5348348/c36f8864-9eb6-41ac-8f45-5030b3788133-PAREMensGroomingLifestyle-PH-WesternVisayas-IloiloCity-IloiloCityProper-Fresha.jpg?class=venue-gallery-small&f_width=1920'
+const BG = '/venue/shop-05.jpg'
 
 export default function CtaBanner() {
   const ref = useReveal(0)
@@ -16,7 +16,7 @@ export default function CtaBanner() {
     >
       <div
         className="absolute inset-0 bg-cover bg-center opacity-[0.12]"
-        style={{ backgroundImage: `url('${BG}')` }}
+        style={{ backgroundImage: `url('${BG}'), url('${FALLBACK_TEXTURE}')` }}
       />
       <div ref={ref} className="reveal relative z-10 max-w-4xl mx-auto px-8">
         <p className="font-grotesk text-[0.6rem] font-semibold tracking-[0.4em] uppercase text-[#C47840] mb-6">

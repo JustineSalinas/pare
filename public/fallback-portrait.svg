@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-label="PARE barber — photo unavailable">
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141414"/>
+      <stop offset="100%" stop-color="#080808"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#pbg)"/>
+
+  <g transform="translate(300 330)">
+    <circle r="118" fill="none" stroke="#2e2e2e" stroke-width="2"/>
+    <circle r="118" fill="#111111"/>
+    <!-- simple bust silhouette -->
+    <circle cy="-34" r="44" fill="#2a2a28"/>
+    <path d="M -74 78 a 74 82 0 0 1 148 0 z" fill="#2a2a28"/>
+  </g>
+
+  <g transform="translate(300 545)" text-anchor="middle" font-family="'Space Grotesk', 'Inter', sans-serif">
+    <line x1="-34" y1="0" x2="34" y2="0" stroke="#C47840" stroke-width="2"/>
+    <text y="52" fill="#f5f2ed" font-size="42" font-weight="700" letter-spacing="14">PARE</text>
+    <text y="90" fill="#6b6b64" font-size="15" font-style="italic" font-family="'Cormorant Garamond', Georgia, serif">Photo coming soon</text>
+  </g>
+</svg>

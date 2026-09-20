@@ -1,10 +1,10 @@
 import { ChevronDown } from "lucide-react";
+import { FALLBACK_TEXTURE } from "./Img";
 
 const FRESHA_URL =
   "https://www.fresha.com/a/pare-mens-grooming-lifestyle-iloilo-city-the-alcove-general-luna-street-g943g1tc";
 
-const BG =
-  "https://images.fresha.com/locations/location-profile-images/1117646/5348347/981f4999-95a4-47aa-82c0-14d6469bfc14-PAREMensGroomingLifestyle-PH-WesternVisayas-IloiloCity-IloiloCityProper-Fresha.jpg?class=venue-gallery-large&f_width=1920";
+const BG = "/venue/shop-02.jpg";
 
 export default function Hero() {
   return (
@@ -13,9 +13,10 @@ export default function Hero() {
       className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden"
     >
       {/* Background */}
+      {/* Second layer is a texture fallback in case the photo ever fails to load */}
       <div
         className="absolute inset-0 bg-cover bg-center animate-heroBgZoom"
-        style={{ backgroundImage: `url('${BG}')` }}
+        style={{ backgroundImage: `url('${BG}'), url('${FALLBACK_TEXTURE}')` }}
       />
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#080808]/85 via-[#080808]/50 to-[#080808]/75" />

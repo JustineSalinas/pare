@@ -1,10 +1,9 @@
 import { useReveal } from '../hooks/useReveal'
 import { Check } from 'lucide-react'
+import Img from './Img'
 
-const IMG_MAIN =
-  'https://images.fresha.com/locations/location-profile-images/1117646/5348347/981f4999-95a4-47aa-82c0-14d6469bfc14-PAREMensGroomingLifestyle-PH-WesternVisayas-IloiloCity-IloiloCityProper-Fresha.jpg?class=venue-gallery-large&f_width=1200'
-const IMG_ACCENT =
-  'https://images.fresha.com/locations/location-profile-images/1117646/5348349/58c2b3d2-137a-486d-b747-0a47a6017d4a-PAREMensGroomingLifestyle-PH-WesternVisayas-IloiloCity-IloiloCityProper-Fresha.jpg?class=venue-gallery-small&f_width=800'
+const IMG_MAIN = '/venue/shop-01.jpg'
+const IMG_ACCENT = '/venue/shop-10.jpg'
 
 const features = [
   'Award-winning barbers',
@@ -25,13 +24,13 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-24 items-center">
           {/* Images */}
           <div ref={leftRef} className="reveal relative h-[520px] lg:h-[600px]">
-            <img
+            <Img
               src={IMG_MAIN}
               alt="PARE barbershop interior with modern barber chairs"
               className="absolute top-0 left-0 w-3/4 h-4/5 object-cover"
               loading="lazy"
             />
-            <img
+            <Img
               src={IMG_ACCENT}
               alt="PARE interior lifestyle decor"
               className="absolute bottom-0 right-0 w-[55%] h-[55%] object-cover border-4 border-[#080808]"

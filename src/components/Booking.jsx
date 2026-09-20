@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Calendar, User, Users, Scissors, Clock, CheckCircle, ChevronRight, ChevronLeft } from 'lucide-react'
 import { useReveal } from '../hooks/useReveal'
 import { serviceCategories } from '../lib/servicesData'
+import Img, { FALLBACK_PORTRAIT } from './Img'
 
 const barbers = [
   { 
@@ -14,31 +15,31 @@ const barbers = [
     id: 'vin', 
     name: 'Vin', 
     role: 'Owner · Head Barber Stylist',
-    img: 'https://cdn-partners-api.fresha.com/employee-avatars/processed/364770/medium/b3ca249a-e13a-46c0-a3a5-69ce9ff207bd-Photoroom_20240701_010515.jpeg'
+    img: '/team/vin.jpg'
   },
   { 
     id: 'kim', 
     name: 'Kim', 
     role: 'Senior Barber',
-    img: 'https://cdn-partners-api.fresha.com/employee-avatars/processed/1464302/medium/8131c042-4c02-46a1-b1da-bbbfbc1ccad6-Photoroom_20250427_184527.jpeg'
+    img: '/team/kim.jpg'
   },
   { 
     id: 'william', 
     name: 'William', 
     role: 'Senior Barber Stylist',
-    img: 'https://cdn-partners-api.fresha.com/employee-avatars/processed/431470/medium/5fe3b644-a07a-4779-b83f-1348983328a2-Photoroom_20250427_184350.jpeg'
+    img: '/team/william.jpg'
   },
   { 
     id: 'arthur', 
     name: 'Arthur', 
     role: 'Senior Barber Stylist',
-    img: 'https://cdn-partners-api.fresha.com/employee-avatars/processed/379089/medium/a07b797c-14b4-470b-9dc4-6844b340403f-Photoroom_20250427_184444.jpeg'
+    img: '/team/arthur.jpg'
   },
   { 
     id: 'paulo', 
     name: 'Paulo', 
     role: 'Barber Stylist',
-    img: 'https://cdn-partners-api.fresha.com/employee-avatars/processed/1644773/medium/89e53b2a-accd-471a-a4eb-52f27e1be0e6-Photoroom_20260611_181640.jpeg'
+    img: '/team/paulo.jpg'
   }
 ]
 
@@ -326,8 +327,9 @@ export default function Booking() {
                     ].join(' ')}
                   >
                     {b.img ? (
-                      <img
+                      <Img
                         src={b.img}
+                        fallback={FALLBACK_PORTRAIT}
                         alt={`${b.name} avatar`}
                         className="w-12 h-12 rounded-full object-cover object-top border border-[#2e2e2e] shrink-0"
                       />

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="PARE — photo unavailable">
+  <defs>
+    <pattern id="stripes" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="28" height="28" fill="#0d0d0d"/>
+      <rect width="14" height="28" fill="#111111"/>
+    </pattern>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.65"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="#080808"/>
+  <rect width="1600" height="900" fill="url(#stripes)"/>
+  <rect width="1600" height="900" fill="url(#vignette)"/>
+
+  <!-- content kept inside a central square so square/portrait crops stay legible -->
+  <g transform="translate(800 450)" text-anchor="middle" font-family="'Space Grotesk', 'Inter', sans-serif">
+    <line x1="-70" y1="-112" x2="70" y2="-112" stroke="#C47840" stroke-width="2"/>
+    <text y="-24" fill="#f5f2ed" font-size="104" font-weight="700" letter-spacing="34">PARE</text>
+    <text y="34" fill="#C47840" font-size="19" font-weight="600" letter-spacing="9">MEN'S GROOMING &amp; LIFESTYLE</text>
+    <line x1="-70" y1="86" x2="70" y2="86" stroke="#C47840" stroke-width="2"/>
+    <text y="142" fill="#6b6b64" font-size="20" font-style="italic" font-family="'Cormorant Garamond', Georgia, serif">Photograph coming soon</text>
+  </g>
+</svg>

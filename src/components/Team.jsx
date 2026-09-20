@@ -1,32 +1,33 @@
 import { useReveal } from '../hooks/useReveal'
 import { Star } from 'lucide-react'
+import Img, { FALLBACK_PORTRAIT } from './Img'
 
 const members = [
   {
     name: 'Vin',
     role: 'Owner · Head Barber Stylist',
-    img: 'https://cdn-partners-api.fresha.com/employee-avatars/processed/364770/medium/b3ca249a-e13a-46c0-a3a5-69ce9ff207bd-Photoroom_20240701_010515.jpeg',
+    img: '/team/vin.jpg',
     owner: true,
   },
   {
     name: 'Kim',
     role: 'Senior Barber',
-    img: 'https://cdn-partners-api.fresha.com/employee-avatars/processed/1464302/medium/8131c042-4c02-46a1-b1da-bbbfbc1ccad6-Photoroom_20250427_184527.jpeg',
+    img: '/team/kim.jpg',
   },
   {
     name: 'William',
     role: 'Senior Barber Stylist',
-    img: 'https://cdn-partners-api.fresha.com/employee-avatars/processed/431470/medium/5fe3b644-a07a-4779-b83f-1348983328a2-Photoroom_20250427_184350.jpeg',
+    img: '/team/william.jpg',
   },
   {
     name: 'Arthur',
     role: 'Senior Barber Stylist',
-    img: 'https://cdn-partners-api.fresha.com/employee-avatars/processed/379089/medium/a07b797c-14b4-470b-9dc4-6844b340403f-Photoroom_20250427_184444.jpeg',
+    img: '/team/arthur.jpg',
   },
   {
     name: 'Paulo',
     role: 'Barber Stylist',
-    img: 'https://cdn-partners-api.fresha.com/employee-avatars/processed/1644773/medium/89e53b2a-accd-471a-a4eb-52f27e1be0e6-Photoroom_20260611_181640.jpeg',
+    img: '/team/paulo.jpg',
   },
 ]
 
@@ -35,8 +36,9 @@ function TeamCard({ member, delay }) {
   return (
     <div ref={ref} className="reveal text-center group">
       <div className="relative w-full aspect-[3/4] overflow-hidden mb-5">
-        <img
+        <Img
           src={member.img}
+          fallback={FALLBACK_PORTRAIT}
           alt={`${member.name} - ${member.role}`}
           className="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-[1.03] grayscale-[20%] group-hover:grayscale-0 filter"
           loading="lazy"

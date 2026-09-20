@@ -1,8 +1,9 @@
 import { useReveal } from '../hooks/useReveal'
 import { Mail } from 'lucide-react'
+import Img, { FALLBACK_PORTRAIT } from './Img'
 
-const SHOP_BG = 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1200&auto=format&fit=crop'
-const VIN_IMG = 'https://cdn-partners-api.fresha.com/employee-avatars/processed/364770/medium/b3ca249a-e13a-46c0-a3a5-69ce9ff207bd-Photoroom_20240701_010515.jpeg'
+const SHOP_BG = '/venue/shop-02.jpg'
+const VIN_IMG = '/team/vin.jpg'
 
 const packages = [
   { name: 'Groom Package', price: 'Inquire' },
@@ -25,7 +26,7 @@ export default function Wedding() {
           {/* Image Container with Sir Vin Overlay */}
           <div ref={leftRef} className="reveal relative aspect-[4/5] hidden lg:block overflow-hidden border border-[#2e2e2e]">
             {/* Background high-resolution moody barbershop shot */}
-            <img
+            <Img
               src={SHOP_BG}
               alt="Luxury modern barbershop environment"
               className="w-full h-full object-cover filter brightness-[0.3] grayscale-[20%]"
@@ -42,8 +43,9 @@ export default function Wedding() {
             {/* Overlaid Profile Card for Sir Vin */}
             <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center z-10">
               <div className="w-40 h-40 rounded-full border-2 border-[#C47840] overflow-hidden mb-5 shadow-2xl bg-[#080808] flex items-center justify-center">
-                <img
+                <Img
                   src={VIN_IMG}
+                  fallback={FALLBACK_PORTRAIT}
                   alt="Vin - PARE owner and head barber"
                   className="w-full h-full object-cover object-top scale-110"
                   loading="lazy"
