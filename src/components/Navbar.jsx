@@ -22,6 +22,15 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    document.body.classList.toggle('no-scroll', open)
+    document.documentElement.classList.toggle('no-scroll', open)
+    return () => {
+      document.body.classList.remove('no-scroll')
+      document.documentElement.classList.remove('no-scroll')
+    }
+  }, [open])
+
   return (
     <>
       <nav

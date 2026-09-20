@@ -16,7 +16,9 @@
   html {
     scroll-behavior: smooth;
     max-width: 100%;
-    overflow-x: hidden;
+    /* clip, not hidden: hidden makes html a scroll container, which breaks
+       smooth anchor scrolling and position:sticky */
+    overflow-x: clip;
   }
 
   body {
@@ -25,7 +27,25 @@
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
+  /* Must sit on html too: html has a non-visible overflow-x, which stops
+     body's overflow from propagating to the viewport. */
+  html.no-scroll,
+  body.no-scroll {
+    overflow: hidden;
+  }
+
+  /* Anchor targets must clear the fixed navbar */
+  section[id] {
+    scroll-margin-top: 90px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 
   ::-webkit-scrollbar {
