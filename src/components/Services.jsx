@@ -35,7 +35,7 @@ function ServiceCard({ s, delay }) {
         <span className="font-grotesk font-bold text-[1.15rem] text-[#C47840]">{s.price}</span>
         <button
           onClick={handleBookClick}
-          className="font-grotesk text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-[#080808] bg-[#C47840] hover:bg-[#D9906A] px-5 py-2.5 transition-colors border-none cursor-pointer"
+          className="font-general-sans text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-[#080808] bg-[#C47840] hover:bg-[#D9906A] px-5 py-2.5 transition-colors border-none cursor-pointer"
         >
           Book Now
         </button>
@@ -65,7 +65,7 @@ export default function Services() {
           </div>
           <a
             href="#booking"
-            className="inline-flex items-center gap-2 font-grotesk text-[0.72rem] font-semibold tracking-[0.25em] uppercase text-[#080808] bg-[#C47840] px-8 py-4 hover:bg-[#D9906A] transition-colors no-underline self-start md:self-auto"
+            className="inline-flex items-center gap-2 font-general-sans text-[0.72rem] font-semibold tracking-[0.25em] uppercase text-[#080808] bg-[#C47840] px-8 py-4 hover:bg-[#D9906A] transition-colors no-underline self-start md:self-auto"
           >
             <Scissors size={13} />
             Book Custom Appointment
