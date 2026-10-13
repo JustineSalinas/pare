@@ -50,6 +50,7 @@
 
   ::-webkit-scrollbar {
     width: 4px;
+    height: 6px;
   }
   ::-webkit-scrollbar-track {
     background: #080808;
@@ -174,4 +175,15 @@
     /* Shifts exactly 100% of the track minus the gap between the two tracks */
     transform: translateX(calc(-100% - 1.5rem)); 
   }
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-130%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
 }

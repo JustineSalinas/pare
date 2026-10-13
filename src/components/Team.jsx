@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { setScrollLocked } from '../lib/smoothScroll'
 import { useReveal } from '../hooks/useReveal'
 import { Star, Instagram, Facebook, X } from 'lucide-react'
 
@@ -119,21 +120,20 @@ function TeamModal({ member, onClose }) {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    if (member) {
-      document.body.style.overflow = 'hidden'
-      // double rAF ensures the initial (closed) state paints before transitioning open
-      requestAnimationFrame(() => requestAnimationFrame(() => setVisible(true)))
-    }
+    if (!member) return
+    setScrollLocked(true)
+    // double rAF ensures the initial (closed) state paints before transitioning open
+    requestAnimationFrame(() => requestAnimationFrame(() => setVisible(true)))
     const handleEsc = (e) => e.key === 'Escape' && onClose()
     document.addEventListener('keydown', handleEsc)
     return () => {
       document.removeEventListener('keydown', handleEsc)
+      setScrollLocked(false)
     }
   }, [member, onClose])
 
   const handleClose = () => {
     setVisible(false)
-    document.body.style.overflow = ''
     setTimeout(onClose, 150)
   }
 
@@ -147,6 +147,7 @@ function TeamModal({ member, onClose }) {
       onClick={handleClose}
     >
       <div
+        data-lenis-prevent
         className={`relative w-full max-w-4xl max-h-[88vh] overflow-y-auto bg-[#111111] border border-[#2e2e2e] transition-all duration-150 ease-out ${
           visible ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.97]'
         }`}

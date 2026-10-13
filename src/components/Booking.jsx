@@ -3,6 +3,7 @@ import { Calendar, User, Users, Scissors, Clock, CheckCircle, ChevronRight, Chev
 import { useReveal } from '../hooks/useReveal'
 import { serviceCategories } from '../lib/servicesData'
 import Img, { FALLBACK_PORTRAIT } from './Img'
+import { scrollToElement } from '../lib/smoothScroll'
 
 const barbers = [
   { 
@@ -125,7 +126,7 @@ export default function Booking() {
       // Scroll to booking form
       const el = document.getElementById('booking')
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth' })
+        scrollToElement(el)
       }
     }
     
@@ -465,7 +466,7 @@ export default function Booking() {
                       Please select a date from the calendar to view available time slots.
                     </div>
                   ) : (
-                    <div className="grid grid-cols-2 gap-2 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar bg-[#080808] border border-[#2e2e2e] p-4">
+                    <div data-lenis-prevent className="grid grid-cols-2 gap-2 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar bg-[#080808] border border-[#2e2e2e] p-4">
                       {getTimeSlots().map((t) => (
                         <button
                           key={t}

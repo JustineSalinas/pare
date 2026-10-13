@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Calendar } from 'lucide-react'
+import { setScrollLocked } from '../lib/smoothScroll'
 
 const FRESHA_URL =
   'https://www.fresha.com/a/pare-mens-grooming-lifestyle-iloilo-city-the-alcove-general-luna-street-g943g1tc'
@@ -46,12 +47,8 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
-    document.body.classList.toggle('no-scroll', open)
-    document.documentElement.classList.toggle('no-scroll', open)
-    return () => {
-      document.body.classList.remove('no-scroll')
-      document.documentElement.classList.remove('no-scroll')
-    }
+    setScrollLocked(open)
+    return () => setScrollLocked(false)
   }, [open])
 
   return (

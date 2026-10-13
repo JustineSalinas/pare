@@ -150,7 +150,7 @@ export default function Chatbot() {
           </div>
 
           {/* Messages Container */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-[#0d0d0d]">
+          <div data-lenis-prevent className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-[#0d0d0d]">
             {messages.map((m, i) => (
               <div
                 key={i}
@@ -194,7 +194,7 @@ export default function Chatbot() {
           </div>
 
           {/* Quick FAQ Suggestion Options */}
-          <div className="px-4 py-2 border-t border-[#2e2e2e] bg-[#111111] flex flex-wrap gap-1.5 max-h-[120px] overflow-y-auto custom-scrollbar">
+          <div data-lenis-prevent className="px-4 py-2 border-t border-[#2e2e2e] bg-[#111111] flex flex-wrap gap-1.5 max-h-[120px] overflow-y-auto custom-scrollbar">
             {faqData.filter(faq => faq.q !== 'Hello').map((faq, idx) => (
               <button
                 key={idx}
