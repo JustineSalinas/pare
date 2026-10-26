@@ -47,8 +47,6 @@ export default function Loader() {
           <span className="chrome-text">PARE</span>
           <span className="loader__shine">PARE</span>
         </div>
-        <div className="loader__rule" aria-hidden="true" />
-        <p className="loader__tag">Men's Grooming &amp; Lifestyle · Iloilo City</p>
       </div>
     </div>
   )

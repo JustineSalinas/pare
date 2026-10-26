@@ -245,21 +245,6 @@
   /* easeInOutSine: drifts in, glides across, settles out */
   animation: loaderShine 2.6s cubic-bezier(0.37, 0, 0.63, 1) 0.5s both;
 }
-.loader__rule {
-  height: 1px;
-  width: min(320px, 60vw);
-  margin: 1.6rem auto 1.2rem;
-  background: var(--chrome-gradient);
-  transform-origin: left;
-  animation: loaderRule 2.6s cubic-bezier(0.37, 0, 0.63, 1) 0.5s both;
-}
-.loader__tag {
-  font-size: 0.66rem;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: var(--chrome);
-  animation: fadeIn 0.8s ease 0.8s both;
-}
 @keyframes loaderRise {
   from { opacity: 0; transform: translateY(24px); filter: blur(6px); }
   to   { opacity: 1; transform: translateY(0); filter: blur(0); }
@@ -267,10 +252,6 @@
 @keyframes loaderShine {
   from { background-position: 140% 0; }
   to   { background-position: -40% 0; }
-}
-@keyframes loaderRule {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
 }
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -293,7 +274,7 @@
 @media (prefers-reduced-motion: reduce) {
   .loader, .loader__inner { transition: opacity 0.3s ease; }
   .loader--lift { transform: none; opacity: 0; }
-  .loader__mark, .loader__shine, .loader__rule, .loader__tag { animation: none; }
+  .loader__mark, .loader__shine { animation: none; }
 }
 
 /* Reveal on scroll */
