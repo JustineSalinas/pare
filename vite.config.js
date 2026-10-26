@@ -4,6 +4,10 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
+  // Lets a Cloudflare quick tunnel (*.trycloudflare.com) reach the dev server for sharing previews
+  server: {
+    allowedHosts: ['.trycloudflare.com'],
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
