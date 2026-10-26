@@ -13,6 +13,8 @@ export function initSmoothScroll() {
     anchors: true,
   })
   instance = lenis
+  // The intro loader locks scrolling before this runs; respect it until it unlocks
+  if (document.documentElement.classList.contains('no-scroll')) lenis.stop()
 
   // Lenis only handles links that carry a hash name, so the logo's bare "#" is sent to the top here
   const toTop = (e) => {
@@ -38,7 +40,16 @@ export function setScrollLocked(locked) {
   if (instance) locked ? instance.stop() : instance.start()
 }
 
+// Route changes jump, they do not glide
+export function scrollToTop() {
+  if (instance) instance.scrollTo(0, { immediate: true })
+  else window.scrollTo(0, 0)
+}
+
 export function scrollToElement(el) {
-  if (instance) instance.scrollTo(el)
-  else el.scrollIntoView({ behavior: 'smooth' })
+  // After a route change the page is taller than Lenis last measured; re-measure so the target is not clamped
+  if (instance) {
+    instance.resize()
+    instance.scrollTo(el)
+  } else el.scrollIntoView({ behavior: 'smooth' })
 }

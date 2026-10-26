@@ -1,9 +1,8 @@
-import { useReveal } from '../hooks/useReveal'
 import { Mail } from 'lucide-react'
+import LoopVideo from './LoopVideo'
 import Img, { FALLBACK_PORTRAIT } from './Img'
-
-const SHOP_BG = '/venue/shop-02.jpg'
-const VIN_IMG = '/vinprofile.webp'
+import { useReveal } from '../hooks/useReveal'
+import { EMAIL, VIDEO } from '../lib/site'
 
 const packages = [
   { name: 'Groom Package', price: 'Inquire' },
@@ -13,99 +12,60 @@ const packages = [
 ]
 
 export default function Wedding() {
-  const leftRef = useReveal(0)
-  const rightRef = useReveal(120)
+  const textRef = useReveal(0)
+  const cardRef = useReveal(150)
 
   return (
-    <section
-      id="wedding"
-      className="py-28 bg-gradient-to-br from-[#1a1a1a] to-[#111111] border-t border-b border-[#2e2e2e]"
-    >
-      <div className="max-w-6xl mx-auto px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          {/* Image Container with Sir Vin Overlay */}
-          <div ref={leftRef} className="reveal relative aspect-[4/5] hidden lg:block overflow-hidden border border-[#2e2e2e]">
-            {/* Background high-resolution moody barbershop shot */}
-            <Img
-              src={SHOP_BG}
-              alt="Luxury modern barbershop environment"
-              className="w-full h-full object-cover filter brightness-[0.3] grayscale-[20%]"
-              loading="lazy"
-            />
-            
-            {/* Vertical text banner */}
-            <span className="absolute top-8 left-6 z-10 bg-[#C47840] text-[#080808] font-grotesk text-[0.6rem] font-bold tracking-[0.3em] uppercase px-3 py-6"
-              style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
-            >
-              Special Occasion
-            </span>
+    <section id="wedding" className="relative overflow-hidden bg-ink">
+      <LoopVideo src={VIDEO.chairs} className="absolute inset-0 w-full h-full" label="The PARE barber chairs" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
 
-            {/* Overlaid Profile Card for Sir Vin */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center z-10">
-              <div className="w-40 h-40 rounded-full border-2 border-[#C47840] overflow-hidden mb-5 shadow-2xl bg-[#080808] flex items-center justify-center">
-                <Img
-                  src={VIN_IMG}
-                  fallback={FALLBACK_PORTRAIT}
-                  alt="Vin - PARE owner and head barber"
-                  className="w-full h-full object-cover object-top scale-110"
-                  loading="lazy"
-                />
-              </div>
-              <div className="bg-[#080808]/85 backdrop-blur-md border border-[#2e2e2e] px-6 py-4 max-w-[280px]">
-                <h4 className="font-grotesk font-bold text-[0.95rem] text-white tracking-[0.05em] mb-1">
-                  Vin Paredes
-                </h4>
-                <div className="text-[0.68rem] tracking-[0.15em] uppercase text-[#C47840] font-semibold mb-2">
-                  Owner & Head Stylist
-                </div>
-                <p className="text-[0.72rem] text-[#888880] leading-relaxed">
-                  Personally orchestrates all wedding and entourage styling sessions.
-                </p>
-              </div>
+      <div className="relative max-w-[1440px] mx-auto px-5 md:px-10 py-28 md:py-40 grid lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] gap-14 items-center">
+        <div ref={textRef} className="reveal">
+          <p className="eyebrow mb-5">For Your Special Day</p>
+          <h2 className="display text-[clamp(2.4rem,6vw,5rem)] text-bone mb-8">
+            Wedding
+            <br />
+            <span className="chrome-text">packages.</span>
+          </h2>
+          <p className="font-serif italic text-[clamp(1.2rem,2.2vw,1.5rem)] leading-[1.5] text-chrome-light max-w-[560px] mb-10">
+            Look your absolute best on the most important day. Our wedding packages are designed to prepare grooms,
+            groomsmen, and the entire entourage with precision and care.
+          </p>
+
+          <ul className="list-none m-0 p-0 border-t border-white/15 max-w-[560px] mb-10">
+            {packages.map((p) => (
+              <li key={p.name} className="flex justify-between items-center py-4 border-b border-white/15">
+                <span className="text-[0.9rem] text-bone">{p.name}</span>
+                <span className="font-serif italic text-[1.1rem] text-chrome">{p.price}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a href={`mailto:${EMAIL}?subject=Wedding%20Package%20Inquiry%20-%20PARE`} className="btn btn-chrome">
+            <Mail size={14} /> Inquire About Wedding Services
+          </a>
+        </div>
+
+        <div ref={cardRef} className="reveal hidden lg:flex justify-end">
+          <div className="w-[320px] bg-ink/70 backdrop-blur-xl border border-white/15 p-8 text-center">
+            <div className="w-36 h-36 mx-auto rounded-full overflow-hidden mb-6 p-[2px]" style={{ background: 'var(--chrome-gradient)' }}>
+              <Img
+                src="/vinprofile.webp"
+                fallback={FALLBACK_PORTRAIT}
+                alt="Vin Paredes, PARE owner and head barber"
+                className="w-full h-full object-cover object-top rounded-full"
+                loading="lazy"
+              />
             </div>
-          </div>
-
-          {/* Text */}
-          <div ref={rightRef} className="reveal">
-            <p className="font-grotesk text-[0.6rem] font-semibold tracking-[0.4em] uppercase text-[#C47840] mb-4">
-              For Your Special Day
+            <h3 className="display text-[1.2rem] text-bone mb-1">Vin Paredes</h3>
+            <p className="text-[0.62rem] tracking-[0.24em] uppercase text-chrome mb-4">Owner &amp; Head Stylist</p>
+            <p className="text-[0.85rem] leading-[1.7] text-muted">
+              Personally orchestrates all wedding and entourage styling sessions.
             </p>
-            <h2 className="font-grotesk font-bold text-[clamp(2rem,5vw,3.5rem)] leading-[1.1] text-white tracking-tight mb-6">
-              Wedding<br />Packages
-            </h2>
-            <div className="w-10 h-px bg-[#C47840] mb-6" />
-            <p className="font-fraunces italic text-[clamp(1.1rem,2.5vw,1.4rem)] text-[#888880] leading-relaxed mb-8">
-              Look your absolute best on the most important day. Our wedding packages are designed
-              to prepare grooms, groomsmen, and the entire entourage with precision and care.
-            </p>
-
-            <div className="flex flex-col gap-px bg-[#2e2e2e] mb-8">
-              {packages.map((p) => (
-                <div
-                  key={p.name}
-                  className="bg-[#111111] px-6 py-5 flex justify-between items-center"
-                >
-                  <span className="font-grotesk font-medium text-[0.85rem] text-[#ece9e3]">
-                    {p.name}
-                  </span>
-                  <span className="font-grotesk font-bold text-[0.85rem] text-[#C47840]">
-                    {p.price}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <a
-              href="mailto:nivla38@gmail.com?subject=Wedding%20Package%20Inquiry%20-%20PARE"
-              className="inline-flex items-center gap-2 font-general-sans text-[0.72rem] font-semibold tracking-[0.25em] uppercase text-[#080808] bg-[#C47840] px-8 py-4 hover:bg-[#D9906A] transition-colors no-underline"
-            >
-              <Mail size={13} />
-              Inquire About Wedding Services
-            </a>
           </div>
         </div>
       </div>
     </section>
   )
 }
-

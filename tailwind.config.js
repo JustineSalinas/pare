@@ -1,33 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: ['class'],
-  content: [
-    './*.html',
-    './src/**/*.{js,ts,jsx,tsx}',
-  ],
+  content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
       colors: {
-        gold: {
-          DEFAULT: '#C47840',
-          light: '#D9906A',
-          dark: '#9A5E2A',
+        ink: {
+          DEFAULT: '#0a0a0a',
+          2: '#111214',
+          3: '#1a1b1e',
         },
-        dark: {
-          DEFAULT: '#111111',
-          2: '#1a1a1a',
-          3: '#242424',
+        line: '#26282c',
+        chrome: {
+          DEFAULT: '#b8bec5',
+          light: '#e6e9ec',
+          dark: '#7d838a',
         },
-        border: '#2e2e2e',
+        bone: '#f2f3f4',
+        muted: '#8b9096',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        grotesk: ['"Space Grotesk"', 'sans-serif'],
-        cormorant: ['"Cormorant Garamond"', 'serif'],
-      },
-      letterSpacing: {
-        widest2: '0.3em',
-        widest3: '0.4em',
+        sans: ['"Inter Tight"', 'sans-serif'],
+        display: ['Archivo', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'serif'],
       },
     },
   },

@@ -5,6 +5,7 @@ export const serviceCategories = [
     services: [
       {
         id: 'basic-haircut',
+        short: 'Clipper fading, scissor work and razor technique. Wash, blow dry, style and hot towel.',
         name: 'Basic Haircut & Style',
         duration: '45 min',
         price: '₱850',
@@ -12,13 +13,15 @@ export const serviceCategories = [
       },
       {
         id: 'haircut-beard',
-        name: 'Haircut & Beard trim',
+        short: 'Cut plus beard shaping and razor line-ups, finished with a peppermint hot towel.',
+        name: 'Haircut & Beard Trim',
         duration: '50 min',
         price: '₱950',
         desc: 'We have 45 min haircut and 60 min hair + beard appointment slots so we can cut your hair correctly with no rush. Facial hair trimming consists of a consultation on your beard and the desired outcome. Removing length in bulk or simply re-shaping, then polished with a straight razor or foil shaver line-ups on the cheeks and neck. Hot towel infused with essential peppermint oil will be applied upon completion.'
       },
       {
         id: 'haircut-consultation',
+        short: 'Best for first visits: an in-depth consultation, then cut, blow dry and style.',
         name: '✪ Haircut + Consultation',
         duration: '50 min',
         price: '₱1,500',
@@ -26,6 +29,7 @@ export const serviceCategories = [
       },
       {
         id: 'pare-premium',
+        short: "Cut and style, beard trim or hot towel shave, and a men's facial, with full consultation.",
         name: '✪ PREMIUM',
         duration: '1 hr 30 min',
         price: '₱3,000',
@@ -39,6 +43,7 @@ export const serviceCategories = [
     services: [
       {
         id: 'pare-premium-pkg',
+        short: "Cut and style, beard trim or hot towel shave, and a men's facial, with full consultation.",
         name: '✪ PREMIUM',
         duration: '1 hr 30 min',
         price: '₱3,000',
@@ -52,6 +57,7 @@ export const serviceCategories = [
     services: [
       {
         id: 'long-haircut',
+        short: 'Custom scissor work for medium to long hair. Wash and style included.',
         name: 'Long Haircut & Style',
         duration: '50 min',
         price: '₱950',
@@ -59,6 +65,7 @@ export const serviceCategories = [
       },
       {
         id: 'haircut-consultation-style',
+        short: 'Best for first visits: an in-depth consultation, then cut, blow dry and style.',
         name: '✪ Haircut + Consultation',
         duration: '50 min',
         price: '₱1,500',
@@ -66,6 +73,7 @@ export const serviceCategories = [
       },
       {
         id: 'student-haircut',
+        short: 'For students and boys. Shampoo, conditioner, blow dry, style and hot towel.',
         name: 'Student Rate Haircut & Style',
         duration: '30 min',
         price: '₱700',
@@ -73,6 +81,7 @@ export const serviceCategories = [
       },
       {
         id: 'basic-haircut-style',
+        short: 'Clipper fading, scissor work and razor technique. Wash, blow dry, style and hot towel.',
         name: 'Basic Haircut & Style',
         duration: '45 min',
         price: '₱850',
@@ -86,13 +95,15 @@ export const serviceCategories = [
     services: [
       {
         id: 'haircut-beard-trim',
-        name: 'Haircut & Beard trim',
+        short: 'Cut plus beard shaping and razor line-ups, finished with a peppermint hot towel.',
+        name: 'Haircut & Beard Trim',
         duration: '50 min',
         price: '₱950',
         desc: 'We have 45 min haircut and 60 min hair + beard appointment slots so we can cut your hair correctly with no rush. Facial hair trimming consists of a consultation on your beard and the desired outcome. Removing length in bulk or simply re-shaping, then polished with a straight razor or foil shaver line-ups on the cheeks and neck. Hot towel infused with essential peppermint oil will be applied upon completion.'
       },
       {
         id: 'haircut-hot-shave',
+        short: 'Cut plus a cut-throat razor shave with the Aēsop Moroccan Neroli Shaving Duet.',
         name: 'Haircut & Hot Towel Shave',
         duration: '50 min',
         price: '₱1,500',
@@ -106,6 +117,7 @@ export const serviceCategories = [
     services: [
       {
         id: 'entourage-pkg',
+        short: 'Groom + 5. Pre-wedding grooming sessions and full styling on the day. Extra guests ₱2,500 each.',
         name: 'GROOM & ENTOURAGE PACKAGE',
         duration: '7 hr',
         price: '₱15,500',
@@ -113,6 +125,7 @@ export const serviceCategories = [
       },
       {
         id: 'bestman-pkg',
+        short: 'Pre-wedding cuts, facials and scalp treatments, then day-of styling and make-up for two.',
         name: 'GROOM & BESTMAN PACKAGE',
         duration: '3 hr',
         price: '₱7,500',
@@ -120,6 +133,7 @@ export const serviceCategories = [
       },
       {
         id: 'groom-pkg',
+        short: 'Pre-wedding cut, facial and scalp treatment, then day-of styling and make-up for the groom.',
         name: 'BASIC GROOM ONLY PACKAGE',
         duration: '2 hr',
         price: '₱5,500',
@@ -133,6 +147,7 @@ export const serviceCategories = [
     services: [
       {
         id: 'aesop-facial',
+        short: 'Double cleanse, masque, hydration and antioxidant finish, tailored to your skin type.',
         name: 'Aēsop Men’s Facial Treatments',
         duration: '30 min',
         price: '₱2,500',

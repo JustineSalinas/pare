@@ -17,7 +17,7 @@
   </g>
 
   <g transform="translate(300 545)" text-anchor="middle" font-family="'Space Grotesk', 'Inter', sans-serif">
-    <line x1="-34" y1="0" x2="34" y2="0" stroke="#C47840" stroke-width="2"/>
+    <line x1="-34" y1="0" x2="34" y2="0" stroke="#B8BEC5" stroke-width="2"/>
     <text y="52" fill="#f5f2ed" font-size="42" font-weight="700" letter-spacing="14">PARE</text>
     <text y="90" fill="#6b6b64" font-size="15" font-style="italic" font-family="'Cormorant Garamond', Georgia, serif">Photo coming soon</text>
   </g>
