@@ -8,6 +8,9 @@ export default defineConfig({
   server: {
     allowedHosts: ['.trycloudflare.com'],
   },
+  preview: {
+    allowedHosts: ['.trycloudflare.com'],
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
