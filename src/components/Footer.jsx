@@ -1,127 +1,93 @@
-import { Instagram, Facebook, Calendar } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Instagram, Facebook, ShoppingBag } from 'lucide-react'
+import { BOOKING_URL, SHOPIFY_URL, INSTAGRAM_URL, FACEBOOK_URL, EMAIL } from '../lib/site'
 
-const FRESHA_URL =
-  'https://www.fresha.com/a/pare-mens-grooming-lifestyle-iloilo-city-the-alcove-general-luna-street-g943g1tc'
-
-const serviceLinks = [
-  'Basic Haircut & Style',
-  'Haircut & Beard Trim',
-  'Haircut + Consultation',
-  'PARE Premium Package',
-  'Facial Treatments',
-  'Wedding Packages',
+const explore = [
+  { label: 'About', to: '/about' },
+  { label: 'Meet the Team', to: '/team' },
+  { label: 'Our Story', to: '/about' },
+  { label: 'Reviews', to: '/#reviews' },
+  { label: 'Gallery', to: '/gallery' },
+  { label: 'Location', to: '/location' },
 ]
 
-const navLinks = [
-  { label: 'About PARE', href: '#about' },
-  { label: 'Portfolio', href: '#gallery' },
-  { label: 'The Team', href: '#team' },
-  { label: 'Reviews', href: '#reviews' },
-  { label: 'Visit Us', href: '#location' },
-  { label: 'Book Now', href: '#booking', external: false },
+const services = ['Haircut', 'Beard', 'Shaving', 'Facials', 'Weddings']
+
+const hours = [
+  ['MON', '9 AM to 7 PM'],
+  ['TUE', '9 AM to 7 PM'],
+  ['WED', '9 AM to 7 PM'],
+  ['THU', '9 AM to 7 PM'],
+  ['FRI', '9 AM to 7 PM'],
+  ['SAT', '9 AM to 7 PM'],
+  ['SUN', '9 AM to 6 PM'],
 ]
 
 export default function Footer() {
   return (
-    <footer className="bg-[#111111] border-t border-[#2e2e2e] pt-16 pb-8">
-      <div className="max-w-6xl mx-auto px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
-          <div>
-            <div className="font-grotesk font-bold text-[2rem] tracking-[0.3em] text-white mb-4">
-              PARE<span className="text-[#C47840]">.</span>
-            </div>
-            <p className="text-[0.83rem] text-[#888880] leading-relaxed max-w-[260px] mb-8">
-              Men's Grooming &amp; Lifestyle. Delivering high-end tailored haircuts at The Alcove,
-              Iloilo City.
-            </p>
-            <div className="flex gap-3">
-              <SocialBtn
-                href="https://www.instagram.com/pare_iloilo.ph"
-                label="Instagram"
-                icon={<Instagram size={15} />}
-              />
-              <SocialBtn
-                href="https://www.facebook.com/iloilofadebarber"
-                label="Facebook"
-                icon={<Facebook size={15} />}
-              />
-              <SocialBtn
-                href="#booking"
-                label="Book Appointment"
-                icon={<Calendar size={15} />}
-                external={false}
-              />
+    <footer className="relative bg-black border-t border-line pt-20 pb-8 overflow-hidden">
+      <div className="max-w-[1240px] mx-auto px-5 md:px-10">
+        <div className="grid grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_0.8fr_1.2fr] gap-x-8 gap-y-12 mb-20">
+          <div className="col-span-2 lg:col-span-1">
+            <Link to="/" className="display text-[1.8rem] tracking-[0.16em] chrome-text no-underline">PARE</Link>
+            <p className="text-[0.72rem] tracking-[0.2em] uppercase text-muted mt-2 mb-8">Studio · Iloilo City</p>
+            <p className="text-[0.75rem] text-chrome-dark mb-1">Location</p>
+            <p className="text-[1rem] font-medium text-bone mb-6 leading-snug">The Alcove, General Luna St.<br />Iloilo City Proper, 5000</p>
+            <p className="text-[0.75rem] text-chrome-dark mb-1">Instagram</p>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="text-[1.1rem] font-semibold text-bone no-underline hover:text-chrome-light">
+              @pare_iloilo.ph
+            </a>
+            <div className="flex gap-2.5 mt-7">
+              <SocialBtn href={INSTAGRAM_URL} label="Instagram" icon={<Instagram size={15} />} />
+              <SocialBtn href={FACEBOOK_URL} label="Facebook" icon={<Facebook size={15} />} />
+              <SocialBtn href={SHOPIFY_URL} label="Shop on Shopify" icon={<ShoppingBag size={15} />} />
             </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <div className="font-grotesk text-[0.65rem] font-bold tracking-[0.3em] uppercase text-[#ece9e3] mb-6">
-              Services
-            </div>
-            <ul className="space-y-3 list-none">
-              {serviceLinks.map((s) => (
-                <li key={s}>
-                  <a
-                    href="#services"
-                    className="text-[0.83rem] text-[#888880] hover:text-[#C47840] transition-colors no-underline"
-                  >
-                    {s}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Navigate */}
-          <div>
-            <div className="font-grotesk text-[0.65rem] font-bold tracking-[0.3em] uppercase text-[#ece9e3] mb-6">
-              Navigate
-            </div>
-            <ul className="space-y-3 list-none">
-              {navLinks.map((l) => (
-                <li key={l.label}>
-                  <a
-                    href={l.href}
-                    target={l.external ? '_blank' : undefined}
-                    rel={l.external ? 'noreferrer' : undefined}
-                    className="text-[0.83rem] text-[#888880] hover:text-[#C47840] transition-colors no-underline"
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Visit */}
-          <div>
-            <div className="font-grotesk text-[0.65rem] font-bold tracking-[0.3em] uppercase text-[#ece9e3] mb-6">
-              Visit
-            </div>
-            <ul className="space-y-3 list-none text-[0.83rem] text-[#888880]">
-              <li>The Alcove, General Luna St.</li>
-              <li>Iloilo City Proper, 5000</li>
-              <li className="pt-2">
-                <a
-                  href="mailto:nivla38@gmail.com"
-                  className="text-[#888880] hover:text-[#C47840] transition-colors no-underline"
-                >
-                  nivla38@gmail.com
-                </a>
+          <FooterCol title="Explore">
+            {explore.map((l) => (
+              <li key={l.label}>
+                <Link to={l.to} className="footer-link">{l.label}</Link>
               </li>
-              <li className="pt-2 text-[#555550] text-[0.78rem]">Mon–Sat: 9AM–7PM</li>
-              <li className="text-[#555550] text-[0.78rem]">Sunday: 9AM–6PM</li>
+            ))}
+          </FooterCol>
+
+          <FooterCol title="Services">
+            {services.map((s) => (
+              <li key={s}>
+                <Link to="/services" className="footer-link">{s}</Link>
+              </li>
+            ))}
+          </FooterCol>
+
+          <div className="col-span-2 lg:col-span-1">
+            <h3 className="text-[1.05rem] font-semibold text-bone mb-5">Hours</h3>
+            <ul className="list-none m-0 p-0 space-y-3">
+              {hours.map(([d, t]) => (
+                <li key={d} className="flex items-baseline gap-2 text-[0.72rem]">
+                  <span className="text-muted w-9">{d}</span>
+                  <span className="flex-1 border-b border-dotted border-chrome-dark/70 -translate-y-1" aria-hidden="true" />
+                  <span className="font-semibold text-bone">{t}</span>
+                </li>
+              ))}
             </ul>
+            <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="inline-flex mt-7 px-7 py-3 rounded-full border border-chrome-light text-[0.72rem] tracking-[0.14em] uppercase text-bone no-underline hover:bg-chrome-light hover:text-ink transition-colors">
+              Book Now
+            </a>
+            <p className="mt-6 text-[0.8rem]">
+              <a href={`mailto:${EMAIL}`} className="footer-link text-muted">{EMAIL}</a>
+            </p>
           </div>
         </div>
 
-        <div className="border-t border-[#2e2e2e] pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <span className="text-[0.72rem] text-[#555550] tracking-[0.05em]">
-            © 2026 PARE Men's Grooming &amp; Lifestyle · Iloilo City, Philippines
-          </span>
-          <span className="font-fraunces italic text-[0.9rem] text-[#555550]">
+        {/* Oversized chrome wordmark sign-off */}
+        <div className="display chrome-text text-[clamp(5rem,24vw,20rem)] leading-[0.8] tracking-[0.04em] text-center select-none" aria-hidden="true">
+          PARE
+        </div>
+
+        <div className="border-t border-line mt-10 pt-8 pr-16 flex flex-col md:flex-row justify-between gap-4">
+          <span className="text-[0.72rem] text-chrome-dark">© 2026 PARE Men's Grooming &amp; Lifestyle · Iloilo City, Philippines</span>
+          <span className="font-serif italic text-[0.95rem] text-chrome-dark">
             "Because true aesthetic is not to impress, but to refine with effortless finesse."
           </span>
         </div>
@@ -130,17 +96,25 @@ export default function Footer() {
   )
 }
 
-function SocialBtn({ href, label, icon, external = true }) {
+function FooterCol({ title, children }) {
+  return (
+    <div>
+      <h3 className="text-[1.05rem] font-semibold text-bone mb-5">{title}</h3>
+      <ul className="space-y-3 list-none m-0 p-0 text-[0.86rem] text-muted">{children}</ul>
+    </div>
+  )
+}
+
+function SocialBtn({ href, label, icon }) {
   return (
     <a
       href={href}
-      target={external ? "_blank" : undefined}
-      rel={external ? "noreferrer" : undefined}
+      target="_blank"
+      rel="noreferrer"
       aria-label={label}
-      className="w-9 h-9 border border-[#2e2e2e] flex items-center justify-center text-[#888880] hover:border-[#C47840] hover:text-[#C47840] transition-colors no-underline"
+      className="w-10 h-10 border border-line flex items-center justify-center text-muted hover:border-chrome hover:text-bone transition-colors"
     >
       {icon}
     </a>
   )
 }
-

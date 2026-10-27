@@ -20,12 +20,12 @@ const faqData = [
   {
     q: 'What are your rates and services?',
     keywords: ['price', 'rate', 'service', 'cost', 'menu', 'haircut', 'shave', 'beard', 'facial'],
-    a: 'Our full service menu is categorized as follows:\n\n• **Haircut & Style:**\n  - Student Rate Haircut: ₱700 (30 min)\n  - Basic Haircut & Style: ₱850 (45 min)\n  - Long Haircut & Style: ₱950 (50 min)\n  - Haircut + Consultation: ₱1,500 (50 min)\n\n• **Haircut & Beard Services:**\n  - Haircut & Beard Trim: ₱950 (50 min)\n  - Haircut & Hot Towel Shave: ₱1,500 (50 min)\n\n• **PARE Premium Package:**\n  - Premium: ₱3,000 (1h 30m - Haircut, beard trim, and men\'s facial)\n\n• **Facial Treatments:**\n  - Aēsop Men\'s Facial Treatments: ₱2,500 (30 min)\n\n• **Wedding Packages:**\n  - Basic Groom Only: ₱5,500\n  - Groom & Bestman: ₱7,500\n  - Groom & Entourage: ₱15,500\n\nYou can book any of these directly on our website!'
+    a: 'Our full service menu is categorized as follows:\n\n• **Haircut & Style:**\n  - Student Rate Haircut: ₱700 (30 min)\n  - Basic Haircut & Style: ₱850 (45 min)\n  - Long Haircut & Style: ₱950 (50 min)\n  - Haircut + Consultation: ₱1,500 (50 min)\n\n• **Haircut & Beard Services:**\n  - Haircut & Beard Trim: ₱950 (50 min)\n  - Haircut & Hot Towel Shave: ₱1,500 (50 min)\n\n• **PARE Premium Package:**\n  - Premium: ₱3,000 (1h 30m - Haircut, beard trim, and men\'s facial)\n\n• **Facial Treatments:**\n  - Aēsop Men\'s Facial Treatments: ₱2,500 (30 min)\n\n• **Wedding Packages:**\n  - Basic Groom Only: ₱5,500\n  - Groom & Bestman: ₱7,500\n  - Groom & Entourage: ₱15,500\n\nYou can book any of these on Fresha using the Book Now button.'
   },
   {
     q: 'How do I book an appointment?',
     keywords: ['book', 'appointment', 'reserve', 'schedule', 'fresha', 'booking'],
-    a: 'You can book directly using our custom booking system right here on our website! Just scroll to the "Book Appointment" section above to select your service, barber, and preferred time.'
+    a: 'You can book online through Fresha with instant confirmation. Tap any "Book Now" button on this page to pick your service, barber, and preferred time.'
   },
   {
     q: 'Do you offer wedding or entourage packages?',
@@ -82,7 +82,7 @@ export default function Chatbot() {
       }
 
       if (!matchedAnswer) {
-        matchedAnswer = "I'm not sure I understand that inquiry. Here are some quick questions you can ask me, or you can check our booking section to secure your slot directly!"
+        matchedAnswer = "I'm not sure I understand that inquiry. Here are some quick questions you can ask me, or tap Book Now to secure your slot on Fresha!"
       }
 
       setMessages((prev) => [...prev, { sender: 'bot', text: matchedAnswer }])
@@ -107,34 +107,34 @@ export default function Chatbot() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 font-grotesk">
+    <div className="fixed bottom-6 right-6 z-50">
       {/* Floating Toggle Button */}
       {!isOpen && (
   <button
     onClick={() => setIsOpen(true)}
-    className="w-14 h-14 bg-[#C47840] hover:bg-[#D9906A] text-[#080808] rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 transform hover:scale-105 border-none cursor-pointer overflow-hidden"
+    className="w-14 h-14 bg-chrome-light hover:bg-white text-ink rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 transform hover:scale-105 border-none cursor-pointer overflow-hidden"
     aria-label="Open Chat"
   >
     <img 
       src="/parechatbot.png" 
       alt="Chatbot Icon" 
-      className="w-[130%] h-[130%] object-cover scale-100 transition-all duration-300 hover:brightness-250" 
+      className="w-[130%] h-[130%] object-cover scale-100 grayscale contrast-125 transition-all duration-300" 
     />
   </button>
 )}
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="w-[360px] max-w-[calc(100vw-2rem)] h-[480px] bg-[#111111] border border-[#2e2e2e] flex flex-col shadow-2xl transition-all duration-300">
+        <div className="w-[360px] max-w-[calc(100vw-2rem)] h-[480px] bg-ink-2 border border-line flex flex-col shadow-2xl transition-all duration-300">
           {/* Header */}
-          <div className="bg-[#080808] border-b border-[#2e2e2e] p-4 flex justify-between items-center">
+          <div className="bg-ink border-b border-line p-4 flex justify-between items-center">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-[#C47840]/10 flex items-center justify-center text-[#C47840] font-bold text-[0.95rem]">
+              <div className="w-8 h-8 rounded-full bg-chrome/10 flex items-center justify-center text-chrome-light font-bold text-[0.95rem]">
                 P
               </div>
               <div>
                 <h4 className="text-white text-[0.85rem] font-semibold tracking-[0.05em]">PARE Assistant</h4>
-                <p className="text-[0.62rem] text-[#888880] flex items-center gap-1.5">
+                <p className="text-[0.62rem] text-muted flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block animate-pulse"></span>
                   Online Support
                 </p>
@@ -142,7 +142,7 @@ export default function Chatbot() {
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-[#888880] hover:text-white bg-transparent border-none cursor-pointer transition-colors"
+              className="text-muted hover:text-white bg-transparent border-none cursor-pointer transition-colors"
               aria-label="Close Chat"
             >
               <X size={18} />
@@ -150,7 +150,7 @@ export default function Chatbot() {
           </div>
 
           {/* Messages Container */}
-          <div data-lenis-prevent className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-[#0d0d0d]">
+          <div data-lenis-prevent className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-ink">
             {messages.map((m, i) => (
               <div
                 key={i}
@@ -160,7 +160,7 @@ export default function Chatbot() {
                 ].join(' ')}
               >
                 {m.sender === 'bot' && (
-                  <div className="w-6 h-6 rounded-full bg-[#C47840] text-[#080808] text-[0.62rem] font-bold flex items-center justify-center shrink-0">
+                  <div className="w-6 h-6 rounded-full bg-chrome-light text-ink text-[0.62rem] font-bold flex items-center justify-center shrink-0">
                     P
                   </div>
                 )}
@@ -168,8 +168,8 @@ export default function Chatbot() {
                   className={[
                     'p-3 text-[0.8rem] leading-relaxed',
                     m.sender === 'user'
-                      ? 'bg-[#C47840] text-[#080808] font-medium'
-                      : 'bg-[#1a1a1a] text-[#ece9e3] border border-[#2e2e2e]'
+                      ? 'bg-chrome-light text-ink font-medium'
+                      : 'bg-ink-3 text-bone border border-line'
                   ].join(' ')}
                   style={{ whiteSpace: 'pre-line' }}
                 >
@@ -180,13 +180,13 @@ export default function Chatbot() {
 
             {isTyping && (
               <div className="flex gap-2.5 max-w-[85%]">
-                <div className="w-6 h-6 rounded-full bg-[#C47840] text-[#080808] text-[0.62rem] font-bold flex items-center justify-center shrink-0">
+                <div className="w-6 h-6 rounded-full bg-chrome-light text-ink text-[0.62rem] font-bold flex items-center justify-center shrink-0">
                   P
                 </div>
-                <div className="bg-[#1a1a1a] text-[#ece9e3] border border-[#2e2e2e] p-3 text-[0.8rem] rounded-sm flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 bg-[#888880] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                  <span className="w-1.5 h-1.5 bg-[#888880] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                  <span className="w-1.5 h-1.5 bg-[#888880] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                <div className="bg-ink-3 text-bone border border-line p-3 text-[0.8rem] rounded-sm flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 bg-muted rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                  <span className="w-1.5 h-1.5 bg-muted rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                  <span className="w-1.5 h-1.5 bg-muted rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                 </div>
               </div>
             )}
@@ -194,12 +194,12 @@ export default function Chatbot() {
           </div>
 
           {/* Quick FAQ Suggestion Options */}
-          <div data-lenis-prevent className="px-4 py-2 border-t border-[#2e2e2e] bg-[#111111] flex flex-wrap gap-1.5 max-h-[120px] overflow-y-auto custom-scrollbar">
+          <div data-lenis-prevent className="px-4 py-2 border-t border-line bg-ink-2 flex flex-wrap gap-1.5 max-h-[120px] overflow-y-auto custom-scrollbar">
             {faqData.filter(faq => faq.q !== 'Hello').map((faq, idx) => (
               <button
                 key={idx}
                 onClick={() => handleFAQClick(faq)}
-                className="shrink-0 bg-[#1a1a1a] hover:bg-[#C47840]/10 border border-[#2e2e2e] hover:border-[#C47840] text-[#ece9e3] px-3 py-1.5 text-[0.68rem] transition-colors cursor-pointer"
+                className="shrink-0 bg-ink-3 hover:bg-chrome/10 border border-line hover:border-chrome text-bone px-3 py-1.5 text-[0.68rem] transition-colors cursor-pointer"
               >
                 {faq.q}
               </button>
@@ -212,21 +212,21 @@ export default function Chatbot() {
               e.preventDefault()
               handleSendMessage(inputValue)
             }}
-            className="p-3 bg-[#080808] border-t border-[#2e2e2e] flex gap-2 items-center"
+            className="p-3 bg-ink border-t border-line flex gap-2 items-center"
           >
             <input
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Ask a question..."
-              className="flex-1 bg-[#111111] border border-[#2e2e2e] text-[#ece9e3] text-[0.8rem] px-3 py-2.5 focus:border-[#C47840] focus:outline-none"
+              className="flex-1 bg-ink-2 border border-line text-bone text-[0.8rem] px-3 py-2.5 focus:border-chrome focus:outline-none"
             />
             <button
               type="submit"
               disabled={!inputValue.trim()}
               className={[
                 'w-9 h-9 flex items-center justify-center border-none cursor-pointer transition-colors',
-                inputValue.trim() ? 'bg-[#C47840] text-[#080808]' : 'bg-[#1a1a1a] text-[#555550]'
+                inputValue.trim() ? 'bg-chrome-light text-ink' : 'bg-ink-3 text-chrome-dark'
               ].join(' ')}
             >
               <Send size={14} />

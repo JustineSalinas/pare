@@ -1,9 +1,9 @@
-import { useReveal } from '../hooks/useReveal'
 import { Check } from 'lucide-react'
+import LoopVideo from './LoopVideo'
 import Img from './Img'
-
-const IMG_MAIN = '/venue/shop-01.jpg'
-const IMG_ACCENT = '/venue/shop-10.jpg'
+import { useReveal } from '../hooks/useReveal'
+import { useScrollProgress } from '../hooks/useScrollProgress'
+import { VIDEO } from '../lib/site'
 
 const features = [
   'Award-winning barbers',
@@ -15,69 +15,53 @@ const features = [
 ]
 
 export default function About() {
-  const leftRef = useReveal(0)
-  const rightRef = useReveal(120)
+  const mediaRef = useScrollProgress('pass')
+  const textRef = useReveal(100)
 
   return (
-    <section id="about" className="py-28 bg-[#faf8f5]">
-      <div className="max-w-6xl mx-auto px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-24 items-center">
-          {/* Images */}
-          <div ref={leftRef} className="reveal relative h-[520px] lg:h-[600px]">
-            <Img
-              src={IMG_MAIN}
-              alt="PARE barbershop interior with modern barber chairs"
-              className="absolute top-0 left-0 w-3/4 h-4/5 object-cover"
-              loading="lazy"
-            />
-            <Img
-              src={IMG_ACCENT}
-              alt="PARE interior lifestyle decor"
-              className="absolute bottom-0 right-0 w-[55%] h-[55%] object-cover border-4 border-[#faf8f5]"
-              loading="lazy"
-            />
-            <div className="absolute bottom-4 left-0 bg-[#C47840] text-[#080808] px-5 py-3 font-grotesk text-[0.65rem] font-bold tracking-[0.2em] uppercase">
+    <section id="about" className="relative bg-ink py-24 md:py-32 overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-5 md:px-10">
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-24 items-center">
+          {/* Video with a venue still drifting against it */}
+          <div ref={mediaRef} className="relative h-[520px] md:h-[640px]" style={{ '--p': 0.5 }}>
+            <div className="absolute top-0 left-0 w-[78%] h-[86%] overflow-hidden">
+              <LoopVideo src={VIDEO.reveal} className="absolute inset-0 w-full h-full" label="A finished cut shown to a client" />
+            </div>
+            <div
+              className="absolute bottom-0 right-0 w-[48%] h-[46%] overflow-hidden border-[6px] border-ink"
+              style={{ transform: 'translateY(calc((0.5 - var(--p)) * 90px))' }}
+            >
+              <Img src="/venue/shop-01.jpg" alt="PARE barbershop interior with modern barber chairs" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div className="absolute bottom-6 left-0 bg-chrome-light text-ink px-4 py-2.5 text-[0.6rem] font-bold tracking-[0.22em] uppercase">
               The Alcove · Iloilo City
             </div>
           </div>
 
-          {/* Text */}
-          <div ref={rightRef} className="reveal">
-            <p className="font-grotesk text-[0.6rem] font-semibold tracking-[0.4em] uppercase text-[#C47840] mb-4">
-              Our Story
-            </p>
-            <h2 className="font-grotesk font-bold text-[clamp(2rem,5vw,3.5rem)] leading-[1.1] text-[#111111] tracking-tight mb-6">
-              Beyond the Cut.<br />It's Character.
+          <div ref={textRef} className="reveal">
+            <p className="eyebrow mb-5">Our Story</p>
+            <h2 className="display text-[clamp(2.2rem,5vw,4rem)] text-bone mb-8">
+              Beyond the cut.
+              <br />
+              <span className="chrome-text">It's character.</span>
             </h2>
-            <div className="w-10 h-px bg-[#C47840] mb-6" />
-            <p className="font-fraunces italic font-light text-[clamp(1.1rem,2.5vw,1.4rem)] text-[#4a463e] leading-relaxed mb-1">
-              "Not just a haircut — it's character crafted through texture and shape. Every angle tells a different story."
+            <p className="text-[0.98rem] leading-[1.85] text-muted mb-5">
+              PARE is Iloilo City's premier barber salon, a multi-zoned space designed with client experience at its
+              core. Born from the legacy of Iloilo Fade Barber, PARE evolved into an award-winning grooming destination
+              that delivers high-end tailored haircuts in an environment that feels as elevated as the service itself.
             </p>
-            <p className="font-fraunces italic text-[0.85rem] text-[#4a463e] mb-6">
-              — Vin Paredes, Owner &amp; Head Barber
+            <p className="text-[0.98rem] leading-[1.85] text-muted mb-10">
+              We are pioneers of modern barbering, offering an exclusive feel in an inclusive space: for men, for women,
+              for everyone who values the craft of looking and feeling their best.
             </p>
-            <p className="text-[0.95rem] leading-[1.85] text-[#6b675f] mb-4">
-              PARE is Iloilo City's premier barber salon — a multi-zoned space designed with
-              client experience at its core. Born from the legacy of Iloilo Fade Barber, PARE
-              evolved into an award-winning grooming destination that delivers high-end tailored
-              haircuts in an environment that feels as elevated as the service itself.
-            </p>
-            <p className="text-[0.95rem] leading-[1.85] text-[#6b675f] mb-8">
-              We are pioneers of modern barbering, offering an exclusive feel in an inclusive
-              space — for men, for women, for everyone who values the craft of looking and
-              feeling their best.
-            </p>
-
-            <div className="grid grid-cols-2 gap-3">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 list-none m-0 p-0">
               {features.map((f) => (
-                <div key={f} className="flex items-center gap-2.5">
-                  <Check size={13} className="text-[#C47840] shrink-0" />
-                  <span className="font-grotesk text-[0.8rem] font-medium text-[#1a1a1a]">
-                    {f}
-                  </span>
-                </div>
+                <li key={f} className="flex items-center gap-3 text-[0.85rem] text-chrome-light">
+                  <Check size={13} className="text-chrome shrink-0" />
+                  {f}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </div>
